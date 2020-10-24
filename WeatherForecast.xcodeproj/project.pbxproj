@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70FA4C22544C1310017FE92 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = A70FA4C12544C1310017FE92 /* ReadMe */; };
 		A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */; };
 		A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC032544BBA500683BB3 /* ViewController.swift */; };
 		A7C9BC072544BBA500683BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C9BC052544BBA500683BB3 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70FA4C12544C1310017FE92 /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		A7C9BBFC2544BBA500683BB3 /* WeatherForeCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForeCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C9BC032544BBA500683BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		A7C9BBFE2544BBA500683BB3 /* WeatherForeCast */ = {
 			isa = PBXGroup;
 			children = (
+				A70FA4C12544C1310017FE92 /* ReadMe */,
 				A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */,
 				A7C9BC032544BBA500683BB3 /* ViewController.swift */,
 				A7C9BC052544BBA500683BB3 /* Main.storyboard */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70FA4C22544C1310017FE92 /* ReadMe in Resources */,
 				A7C9BC0F2544BBA700683BB3 /* LaunchScreen.storyboard in Resources */,
 				A7C9BC0C2544BBA700683BB3 /* Assets.xcassets in Resources */,
 				A7C9BC072544BBA500683BB3 /* Main.storyboard in Resources */,

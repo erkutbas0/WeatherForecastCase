@@ -8,16 +8,19 @@
 import Foundation
 import UIKit
 
-public enum VisualContents: GenericDescriptorProtocol {
+public enum VisualContents: GenericValueProtocol {
     
-    case gradientLayer
+    case searchIcon
+    case closeIcon
     
     typealias Value = UIImage
     
     var value: UIImage {
         switch self {
-        case .gradientLayer:
-            return UIImage(imageLiteralResourceName: "GradientLayer")
+        case .searchIcon:
+            return UIImage(imageLiteralResourceName: "searchIcon")
+        case .closeIcon:
+            return UIImage(imageLiteralResourceName: "closeIcon")
         }
     }
     

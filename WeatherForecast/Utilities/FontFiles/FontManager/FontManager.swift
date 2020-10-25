@@ -13,7 +13,7 @@ public typealias Metropolis = FontManager.Metropolis
 
 public enum FontManager {
     
-    public enum SourceSansPro: GenericDescriptorProtocol {
+    public enum SourceSansPro: GenericValueProtocol {
         case Black(CGFloat)
         case BlackItalic(CGFloat)
         case Bold(CGFloat)

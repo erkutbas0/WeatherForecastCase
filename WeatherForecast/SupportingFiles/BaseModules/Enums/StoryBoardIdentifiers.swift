@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum StoryBoardIdentifiers: GenericDescriptorProtocol {
+public enum StoryBoardIdentifiers: GenericValueProtocol {
     case tutorial
     
     typealias Value = String

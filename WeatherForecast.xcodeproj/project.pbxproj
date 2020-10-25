@@ -135,8 +135,8 @@
 		A70FA5EC254567180017FE92 /* AssemblerResolverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA583254567180017FE92 /* AssemblerResolverDelegate.swift */; };
 		A70FA5ED254567180017FE92 /* BaseViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA584254567180017FE92 /* BaseViewModelDelegate.swift */; };
 		A70FA5EE254567180017FE92 /* BaseViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA584254567180017FE92 /* BaseViewModelDelegate.swift */; };
-		A70FA5EF254567180017FE92 /* GenericDescriptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA585254567180017FE92 /* GenericDescriptorProtocol.swift */; };
-		A70FA5F0254567180017FE92 /* GenericDescriptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA585254567180017FE92 /* GenericDescriptorProtocol.swift */; };
+		A70FA5EF254567180017FE92 /* GenericValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA585254567180017FE92 /* GenericValueProtocol.swift */; };
+		A70FA5F0254567180017FE92 /* GenericValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA585254567180017FE92 /* GenericValueProtocol.swift */; };
 		A70FA5F1254567180017FE92 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA586254567180017FE92 /* Coordinator.swift */; };
 		A70FA5F2254567180017FE92 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA586254567180017FE92 /* Coordinator.swift */; };
 		A70FA62725456C8F0017FE92 /* UseCaseCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA62525456C8F0017FE92 /* UseCaseCallBack.swift */; };
@@ -241,6 +241,11 @@
 		A7C9BC0F2544BBA700683BB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C9BC0D2544BBA700683BB3 /* LaunchScreen.storyboard */; };
 		A7C9BC1A2544BBA800683BB3 /* WeatherForeCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC192544BBA800683BB3 /* WeatherForeCastTests.swift */; };
 		A7C9BC252544BBA800683BB3 /* WeatherForeCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC242544BBA800683BB3 /* WeatherForeCastUITests.swift */; };
+		A7F3473A2545EE23003DE7DC /* HeaderViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F347392545EE23003DE7DC /* HeaderViewComponent.swift */; };
+		A7F347422545EE2E003DE7DC /* HeaderViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F347412545EE2E003DE7DC /* HeaderViewComponentData.swift */; };
+		A7F3474A2545F2C2003DE7DC /* HeaderViewComponentTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F347492545F2C2003DE7DC /* HeaderViewComponentTheme.swift */; };
+		A7F347512545F5A6003DE7DC /* ImageContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3474F2545F5A5003DE7DC /* ImageContainerData.swift */; };
+		A7F347522545F5A6003DE7DC /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F347502545F5A6003DE7DC /* ImageContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,7 +336,7 @@
 		A70FA581254567180017FE92 /* AwakingStoryBoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwakingStoryBoardDelegate.swift; sourceTree = "<group>"; };
 		A70FA583254567180017FE92 /* AssemblerResolverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerResolverDelegate.swift; sourceTree = "<group>"; };
 		A70FA584254567180017FE92 /* BaseViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModelDelegate.swift; sourceTree = "<group>"; };
-		A70FA585254567180017FE92 /* GenericDescriptorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDescriptorProtocol.swift; sourceTree = "<group>"; };
+		A70FA585254567180017FE92 /* GenericValueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericValueProtocol.swift; sourceTree = "<group>"; };
 		A70FA586254567180017FE92 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A70FA62525456C8F0017FE92 /* UseCaseCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseCallBack.swift; sourceTree = "<group>"; };
 		A70FA62625456C8F0017FE92 /* UseCaseCallBackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseCallBackInteractor.swift; sourceTree = "<group>"; };
@@ -394,6 +399,11 @@
 		A7C9BC202544BBA800683BB3 /* WeatherForeCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherForeCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BC242544BBA800683BB3 /* WeatherForeCastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForeCastUITests.swift; sourceTree = "<group>"; };
 		A7C9BC262544BBA800683BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7F347392545EE23003DE7DC /* HeaderViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewComponent.swift; sourceTree = "<group>"; };
+		A7F347412545EE2E003DE7DC /* HeaderViewComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewComponentData.swift; sourceTree = "<group>"; };
+		A7F347492545F2C2003DE7DC /* HeaderViewComponentTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewComponentTheme.swift; sourceTree = "<group>"; };
+		A7F3474F2545F5A5003DE7DC /* ImageContainerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainerData.swift; sourceTree = "<group>"; };
+		A7F347502545F5A6003DE7DC /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		D444C4F4111ADF71209267CA /* Pods-WeatherForeCast-WeatherForeCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForeCast-WeatherForeCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherForeCast-WeatherForeCastUITests/Pods-WeatherForeCast-WeatherForeCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E599260FF9353DFE00EAD28A /* Pods-WeatherForeCastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForeCastTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherForeCastTests/Pods-WeatherForeCastTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -710,7 +720,7 @@
 				A70FA581254567180017FE92 /* AwakingStoryBoardDelegate.swift */,
 				A70FA583254567180017FE92 /* AssemblerResolverDelegate.swift */,
 				A70FA584254567180017FE92 /* BaseViewModelDelegate.swift */,
-				A70FA585254567180017FE92 /* GenericDescriptorProtocol.swift */,
+				A70FA585254567180017FE92 /* GenericValueProtocol.swift */,
 				A70FA586254567180017FE92 /* Coordinator.swift */,
 			);
 			path = Protocols;
@@ -882,6 +892,7 @@
 		A7C9BBFE2544BBA500683BB3 /* WeatherForeCast */ = {
 			isa = PBXGroup;
 			children = (
+				A7F347362545EDFF003DE7DC /* UserIntefaceComponents */,
 				A70FA545254567180017FE92 /* SupportingFiles */,
 				A70FA4CC2544D2F50017FE92 /* PresenterLayer */,
 				A70FA4CB2544D2F10017FE92 /* DomainLayer */,
@@ -915,6 +926,34 @@
 				A7C9BC262544BBA800683BB3 /* Info.plist */,
 			);
 			path = WeatherForeCastUITests;
+			sourceTree = "<group>";
+		};
+		A7F347362545EDFF003DE7DC /* UserIntefaceComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A7F3474E2545F589003DE7DC /* ImageContainerComponents */,
+				A7F347372545EE04003DE7DC /* HeaderViewComponents */,
+			);
+			path = UserIntefaceComponents;
+			sourceTree = "<group>";
+		};
+		A7F347372545EE04003DE7DC /* HeaderViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A7F347392545EE23003DE7DC /* HeaderViewComponent.swift */,
+				A7F347412545EE2E003DE7DC /* HeaderViewComponentData.swift */,
+				A7F347492545F2C2003DE7DC /* HeaderViewComponentTheme.swift */,
+			);
+			path = HeaderViewComponents;
+			sourceTree = "<group>";
+		};
+		A7F3474E2545F589003DE7DC /* ImageContainerComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A7F347502545F5A6003DE7DC /* ImageContainer.swift */,
+				A7F3474F2545F5A5003DE7DC /* ImageContainerData.swift */,
+			);
+			path = ImageContainerComponents;
 			sourceTree = "<group>";
 		};
 		F3CF476B29CBB9FF7B1A0772 /* Frameworks */ = {
@@ -1253,13 +1292,16 @@
 				A70FA5CF254567180017FE92 /* BaseCollectionViewCell.swift in Sources */,
 				A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */,
 				A70FA5CB254567180017FE92 /* BaseViewController.swift in Sources */,
+				A7F347512545F5A6003DE7DC /* ImageContainerData.swift in Sources */,
 				A70FA52C254562C00017FE92 /* Weather.swift in Sources */,
 				A70FA4E22544D37D0017FE92 /* ApiServiceProvider.swift in Sources */,
 				A70FA4E52544D37D0017FE92 /* ApiRetrier.swift in Sources */,
 				A70FA59B254567180017FE92 /* BaseCoordinator.swift in Sources */,
 				A70FA62725456C8F0017FE92 /* UseCaseCallBack.swift in Sources */,
 				A70FA5A1254567180017FE92 /* ApiConnectionErrorType.swift in Sources */,
+				A7F3474A2545F2C2003DE7DC /* HeaderViewComponentTheme.swift in Sources */,
 				A70FA599254567180017FE92 /* Array+Extension.swift in Sources */,
+				A7F3473A2545EE23003DE7DC /* HeaderViewComponent.swift in Sources */,
 				A70FA4E92544D37D0017FE92 /* ApiManager.swift in Sources */,
 				A70FA50E254561AF0017FE92 /* Coordinates.swift in Sources */,
 				A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */,
@@ -1292,7 +1334,8 @@
 				A70FA5BD254567180017FE92 /* DynamicLabelProtocol.swift in Sources */,
 				A70FA516254562810017FE92 /* WeatherDailyList.swift in Sources */,
 				A70FA595254567180017FE92 /* UITableView+Extensions.swift in Sources */,
-				A70FA5EF254567180017FE92 /* GenericDescriptorProtocol.swift in Sources */,
+				A7F347422545EE2E003DE7DC /* HeaderViewComponentData.swift in Sources */,
+				A70FA5EF254567180017FE92 /* GenericValueProtocol.swift in Sources */,
 				A70FA522254562910017FE92 /* FeelsLike.swift in Sources */,
 				A70FA5D3254567180017FE92 /* GenericBaseView.swift in Sources */,
 				A70FA5B5254567180017FE92 /* SingleUseCase.swift in Sources */,
@@ -1303,6 +1346,7 @@
 				A70FA66E25456CCF0017FE92 /* Endpoints.swift in Sources */,
 				A70FA5B3254567180017FE92 /* BaseUseCaseInterface.swift in Sources */,
 				A70FA5D7254567180017FE92 /* BaseView.swift in Sources */,
+				A7F347522545F5A6003DE7DC /* ImageContainer.swift in Sources */,
 				A70FA593254567180017FE92 /* UserDefaults+Extension.swift in Sources */,
 				A70FA5B7254567180017FE92 /* DynamicLabelData.swift in Sources */,
 				A70FA62925456C8F0017FE92 /* UseCaseCallBackInteractor.swift in Sources */,
@@ -1355,7 +1399,7 @@
 				A70FA5A0254567180017FE92 /* ErrorResponse.swift in Sources */,
 				A7C9BC1A2544BBA800683BB3 /* WeatherForeCastTests.swift in Sources */,
 				A70FA5D2254567180017FE92 /* GenericCollectionViewCell.swift in Sources */,
-				A70FA5F0254567180017FE92 /* GenericDescriptorProtocol.swift in Sources */,
+				A70FA5F0254567180017FE92 /* GenericValueProtocol.swift in Sources */,
 				A70FA58C254567180017FE92 /* String+Extensions.swift in Sources */,
 				A70FA6C125456CCF0017FE92 /* ViewControllerUtilities.swift in Sources */,
 				A70FA594254567180017FE92 /* UserDefaults+Extension.swift in Sources */,

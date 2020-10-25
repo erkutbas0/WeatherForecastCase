@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPHeaderFields: GenericDescriptorProtocol {
+enum HTTPHeaderFields: GenericValueProtocol {
     typealias Value = (String, String)
     
     case contentType

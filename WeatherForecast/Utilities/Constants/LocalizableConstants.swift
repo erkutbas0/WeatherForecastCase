@@ -11,7 +11,7 @@ public typealias LabelPrompts = LocalizableString.LabelPrompts
 
 public enum LocalizableString {
     
-    public enum LabelPrompts: GenericDescriptorProtocol {
+    public enum LabelPrompts: GenericValueProtocol {
         case components
         case currencyTail
         case stars

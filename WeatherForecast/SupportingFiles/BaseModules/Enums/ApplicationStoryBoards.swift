@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ApplicationStoryBoards: GenericDescriptorProtocol {
+enum ApplicationStoryBoards: GenericValueProtocol {
     
     typealias Value = String
     

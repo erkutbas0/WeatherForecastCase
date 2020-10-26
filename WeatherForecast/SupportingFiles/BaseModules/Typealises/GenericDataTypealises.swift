@@ -7,5 +7,5 @@
 
 import Foundation
 
-typealias GenericDataProtocolCompletion = (GenericDataProtocol) -> Void
+typealias GenericDataProtocolCompletion = (GenericRowDataProtocol) -> Void
 

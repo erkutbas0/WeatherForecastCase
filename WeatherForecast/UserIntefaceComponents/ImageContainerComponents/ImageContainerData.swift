@@ -1,17 +1,17 @@
 //
 //  ImageContainerData.swift
-//  CartCodeCase
+//  WeatherForeCast
 //
-//  Created by Erkut Bas on 23.10.2020.
+//  Created by Erkut Bas on 25.10.2020.
 //
-
 import UIKit
 
 class ImageContainerData {
     
     private(set) var image: UIImage = VisualContents.closeIcon.value
-    private(set) var height: CGFloat = 30
-    private(set) var width: CGFloat = 30
+    private(set) var height: CGFloat = 20
+    private(set) var width: CGFloat = 20
+    private(set) var tintColor: UIColor = ColorSpectrum.defaultWhite
 
     func setImage(with value: UIImage) -> Self {
         self.image = value
@@ -25,6 +25,11 @@ class ImageContainerData {
     
     func setWidth(with value: CGFloat) -> Self {
         self.width = value
+        return self
+    }
+    
+    func setTintColor(with value: UIColor) -> Self {
+        self.tintColor = value
         return self
     }
     

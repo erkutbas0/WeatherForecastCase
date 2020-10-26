@@ -7,12 +7,12 @@
 
 import Swinject
 
-//protocol AssemblerResolverDelegate {
-//    
-//}
-//
-//extension AssemblerResolverDelegate {
-//    func returnResolver() -> Resolver {
-//        return Assembler.sharedAssembler.resolver
-//    }
-//}
+protocol AssemblerResolverDelegate {
+    
+}
+
+extension AssemblerResolverDelegate {
+    func returnResolver() -> Resolver {
+        return Assembler.sharedAssembler.resolver
+    }
+}

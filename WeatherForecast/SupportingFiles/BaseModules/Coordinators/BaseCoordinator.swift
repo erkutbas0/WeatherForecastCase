@@ -16,7 +16,7 @@ public class BaseCoordinator<T: BaseViewModelDelegate>: NSObject, Coordinator {
         self.viewModel = viewModel
     }
     
-    //public var AssemblerResolver = Assembler.sharedAssembler.resolver
+    public var AssemblerResolver = Assembler.sharedAssembler.resolver
     
     public var navigationController = UINavigationController()
     public var viewContoller = UIViewController()

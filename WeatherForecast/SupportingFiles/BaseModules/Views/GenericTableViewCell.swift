@@ -38,7 +38,7 @@ class GenericTableViewCell<DataType, ViewType: GenericBaseView<DataType>>: BaseT
     func subscribeToSelectedRow(completion: @escaping GenericDataProtocolCompletion) {
         genericView.startPressedAnimationCommon { [weak self](finish) in
             if finish {
-                guard let data = self?.genericView.returnData() as? GenericDataProtocol else { return }
+                guard let data = self?.genericView.returnData() as? GenericRowDataProtocol else { return }
                 completion(data)
             }
         }

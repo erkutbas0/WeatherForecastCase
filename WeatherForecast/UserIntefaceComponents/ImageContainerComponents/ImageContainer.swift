@@ -1,8 +1,8 @@
 //
 //  ImageContainer.swift
-//  CartCodeCase
+//  WeatherForeCast
 //
-//  Created by Erkut Bas on 23.10.2020.
+//  Created by Erkut Bas on 25.10.2020.
 //
 
 import UIKit
@@ -17,13 +17,14 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
         let temp = UIImageView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.isUserInteractionEnabled = true
-        temp.contentMode = .scaleAspectFill
+        temp.contentMode = .scaleAspectFit
         return temp
     }()
     
     override func addMajorFields() {
         super.addMajorFields()
         addImageView()
+        addGestureRecognizer()
     }
     
     private func addImageView() {
@@ -32,7 +33,7 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
         NSLayoutConstraint.activate([
         
             imageView.heightAnchor.constraint(equalToConstant: returnContentSize().0),
-            imageView.heightAnchor.constraint(equalToConstant: returnContentSize().1),
+            imageView.widthAnchor.constraint(equalToConstant: returnContentSize().1),
             
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -46,13 +47,41 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
         super.loadDataToView()
         
         guard let data = returnData() else { return }
-        imageView.image = data.image
+        imageView.image = data.image.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = data.tintColor
         
     }
     
     private func returnContentSize() -> (CGFloat, CGFloat) {
-        guard let data = returnData() else { return (30, 30) }
+        guard let data = returnData() else { return (20, 20) }
         return (data.height, data.width)
     }
     
+    func subscribeImageContainerTappedListener(completion: @escaping ImageTappedCompletion) {
+        imageTapped = completion
+    }
+    
+}
+
+
+extension ImageContainer: UIGestureRecognizerDelegate {
+    private func addGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: .imageTappedAction)
+        tap.delegate = self
+        addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func imageTappedAction(_ sender: UITapGestureRecognizer) {
+        isUserInteractionEnabled = false
+        startPressedAnimationCommon { [weak self](finish) in
+            if finish {
+                self?.isUserInteractionEnabled = true
+                self?.imageTapped?()
+            }
+        }
+    }
+}
+
+fileprivate extension Selector {
+    static let imageTappedAction = #selector(ImageContainer.imageTappedAction)
 }

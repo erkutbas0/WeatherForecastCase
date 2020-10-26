@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var test: HeaderViewComponent!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -17,7 +19,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = #colorLiteral(red: 0.1647058824, green: 0.1803921569, blue: 0.262745098, alpha: 1)
+        view.backgroundColor = ColorSpectrum.defaultBackground
+        
+        test = HeaderViewComponent(data: HeaderViewComponentData(title: BasicAttributedLabelData(text: "Cities").setTextFont(with: [SourceSansPro.SemiBold(40).value])).setRightIcon(by: ImageContainerData().setImage(with: VisualContents.searchIcon.value).setWidth(with: 40).setHeight(with: 40)))
+        test.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(test)
+        
+        NSLayoutConstraint.activate([
+        
+            test.topAnchor.constraint(equalTo: view.topAnchor),
+            test.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            test.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        
+        
+        ])
     }
 
 

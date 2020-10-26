@@ -1,20 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Metropolis-Black.otf">
+            <string>Metropolis-Black</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-UC-aNw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1T-Hs-w1j">
+                                        <rect key="frame" x="0.0" y="496" width="414" height="520"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-vS-M4s">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="520"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-Qj-Dgj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="520"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUS-c7-0OU">
+                                                                <rect key="frame" x="51.5" y="420" width="104.5" height="40"/>
+                                                                <fontDescription key="fontDescription" name="Metropolis-Black" family="Metropolis" pointSize="40"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.47058823529999999" green="0.51764705879999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="sUS-c7-0OU" secondAttribute="bottom" constant="60" id="0ph-Qy-llb"/>
+                                                            <constraint firstItem="sUS-c7-0OU" firstAttribute="centerX" secondItem="Yck-Qj-Dgj" secondAttribute="centerX" id="81n-Jh-mwd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMf-bt-Xdc">
+                                                        <rect key="frame" x="207" y="0.0" width="207" height="520"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-A1-2Qe">
+                                                                <rect key="frame" x="55.5" y="420" width="96" height="40"/>
+                                                                <fontDescription key="fontDescription" name="Metropolis-Black" family="Metropolis" pointSize="40"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="vTE-A1-2Qe" firstAttribute="centerX" secondItem="sMf-bt-Xdc" secondAttribute="centerX" id="3nN-QI-TeV"/>
+                                                            <constraint firstAttribute="bottom" secondItem="vTE-A1-2Qe" secondAttribute="bottom" constant="60" id="hbh-Pi-53f"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="520" id="Tv0-2L-L0G"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.63921568630000003" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="520" id="0dn-8g-ag5"/>
+                                            <constraint firstAttribute="trailing" secondItem="zEi-vS-M4s" secondAttribute="trailing" id="90k-2Z-Reg"/>
+                                            <constraint firstItem="zEi-vS-M4s" firstAttribute="leading" secondItem="n1T-Hs-w1j" secondAttribute="leading" id="eWv-sc-GL9"/>
+                                            <constraint firstAttribute="bottom" secondItem="zEi-vS-M4s" secondAttribute="bottom" id="uiP-iu-O89"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n1T-Hs-w1j" secondAttribute="trailing" id="3Cr-0b-yaR"/>
+                                    <constraint firstItem="n1T-Hs-w1j" firstAttribute="leading" secondItem="IRO-UC-aNw" secondAttribute="leading" id="Chv-eD-bEw"/>
+                                    <constraint firstAttribute="bottom" secondItem="n1T-Hs-w1j" secondAttribute="bottom" constant="-120" id="P5n-bO-MQ9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IRO-UC-aNw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JSf-Sf-0dN"/>
+                            <constraint firstItem="IRO-UC-aNw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-44" id="QMR-ac-p5v"/>
+                            <constraint firstItem="IRO-UC-aNw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Zie-e9-k7f"/>
+                            <constraint firstItem="IRO-UC-aNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oku-Uo-FKQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +101,9 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

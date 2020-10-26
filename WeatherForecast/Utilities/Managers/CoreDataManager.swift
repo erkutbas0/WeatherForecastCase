@@ -1,28 +1,25 @@
 //
-//  AppDelegate.swift
+//  CoreDataManager.swift
 //  WeatherForeCast
 //
 //  Created by Erkut Bas on 24.10.2020.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class CoreDataManager {
     
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        startAppCoordinator()
-        
-        return true
+    public static let shared = CoreDataManager()
+    
+    public var context: NSManagedObjectContext!
+    
+    init() {
+        context = persistentContainer.viewContext
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
-
+    
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -30,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "WeatherForeCast")
+        let container = NSPersistentContainer(name: "CartCodeCase")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -51,9 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
-        let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -66,14 +61,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func startAppCoordinator() {
-        guard let appCoordinator = returnResolver().resolve(AppCoordinator.self) else { return }
-        appCoordinator.start()
+    // MARK: - Core Data Fetch
+    func fetch<T: NSManagedObject>(_ type: T.Type) -> [T] {
+        do {
+            if let fetchedObjects = try context.fetch(T.fetchRequest()) as? [T] {
+                return fetchedObjects
+            }
+        } catch {
+            debugPrint("Fetch for type: \(type) - error: \(error)")
+        }
+        return [T]()
     }
+    
+    // MARK: - Core Data Fetch
+    func fetchWithPredicate<T: NSManagedObject>(_ type: T.Type, predicateKey: String, predicateValue: String) -> T? {
+        do {
+            let fetchRequest = T.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: predicateKey, predicateValue)
 
-}
-
-// Mark: AssemblerResolverDelegate
-extension AppDelegate: AssemblerResolverDelegate {
+            if let fetchedObjects = try context.fetch(fetchRequest) as? [T] {
+                return fetchedObjects.getElement(at: 0) ?? nil
+            }
+            
+        } catch {
+            debugPrint("Fetch for type: \(type) - error: \(error)")
+        }
+        return nil
+    }
+    
+    // MARK: Core Data Delete
+    func delete(_ object: NSManagedObject) {
+        context.delete(object)
+    }
     
 }

@@ -8,13 +8,6 @@ import Foundation
 
 protocol GenericRowDataProtocol: GenericDataProtocol {
     
-    var sectionType: SectionType { get }
-    var contentCount: Int { get }
+    var itemId: Int { get }
     
-}
-
-enum SectionType {
-    case main
-    case reportAction
-    case spare
 }

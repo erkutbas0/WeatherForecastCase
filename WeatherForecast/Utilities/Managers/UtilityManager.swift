@@ -8,6 +8,8 @@
 import Foundation
 
 class UtilityManager {
+
+    static let appId: String = "41a47c0c4d7d86694bd472f51e33f937"
     
     /// Description: Returns BaseUrl for endpoint calls
     /// - Parameter environment: Environments such as test, development, etc...

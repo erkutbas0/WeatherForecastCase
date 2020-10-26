@@ -9,6 +9,12 @@ import Foundation
 
 class MainViewModel: BaseViewModelDelegate {
     
+    private var coreDataManager: CoreDataManager!
+    
+    init(coreDataManager: CoreDataManager) {
+        self.coreDataManager = coreDataManager
+    }
+    
     func dismissCoordinator() {
         
     }

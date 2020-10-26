@@ -7,35 +7,42 @@
 
 import Foundation
 
-public typealias LabelPrompts = LocalizableString.LabelPrompts
+public typealias MainViewLocalizables = LocalizableString.MainViewLocalizables
+public typealias CitySearchViewLocalizables = LocalizableString.CitySearchViewLocalizables
 
 public enum LocalizableString {
     
-    public enum LabelPrompts: GenericValueProtocol {
-        case components
-        case currencyTail
-        case stars
-        case evaluation
-        case reportItem
-        case addProductCart
+    public enum MainViewLocalizables: GenericValueProtocol {
+        case headerTitle
 
         typealias Value = String
         
         var value: String {
             switch self {
-            case .components:
-                return "Components".toLocalize()
-            case .currencyTail:
-                return "currencyTail".toLocalize()
-            case .stars:
-                return "stars".toLocalize()
-            case .evaluation:
-                return "evaluation".toLocalize()
-            case .reportItem:
-                return "reportItem".toLocalize()
-            case .addProductCart:
-                return "addProductCart".toLocalize()
-                
+            case .headerTitle:
+                return "mainView_HeaderTitle".toLocalize()
+            }
+        }
+    }
+    
+    public enum CitySearchViewLocalizables: GenericValueProtocol {
+        case headerTitle
+        case cityPlaceHolder
+        case dailyCountPlaceHolder
+        case buttonContinue
+
+        typealias Value = String
+        
+        var value: String {
+            switch self {
+            case .headerTitle:
+                return "citySearchView_HeaderTitle".toLocalize()
+            case .cityPlaceHolder:
+                return "citySearchView_CityPlaceHolder".toLocalize()
+            case .dailyCountPlaceHolder:
+                return "citySearchView_DailyCount".toLocalize()
+            case .buttonContinue:
+                return "citySearchView_ContinueButtonTitle".toLocalize()
             }
         }
     }

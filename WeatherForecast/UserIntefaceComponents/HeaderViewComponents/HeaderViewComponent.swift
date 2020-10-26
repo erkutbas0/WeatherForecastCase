@@ -81,7 +81,7 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
         NSLayoutConstraint.activate([
         
             leftIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 60),
-            leftIcon.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            leftIcon.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
         
         ])
         
@@ -97,8 +97,17 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
         NSLayoutConstraint.activate([
         
             rightIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 60),
-            rightIcon.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            rightIcon.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
         
         ])
     }
+    
+    func subscribeRightIconListener(completin: @escaping ImageTappedCompletion) {
+        rightIcon.subscribeImageContainerTappedListener(completion: completin)
+    }
+    
+    func subscribeLeftIconListener(completin: @escaping ImageTappedCompletion) {
+        leftIcon.subscribeImageContainerTappedListener(completion: completin)
+    }
+    
 }

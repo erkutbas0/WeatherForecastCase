@@ -14,7 +14,12 @@ class MainViewController: BaseViewController<MainViewModel> {
     override func prepareViewControllerConfigurations() {
         super.prepareViewControllerConfigurations()
         
+        view.backgroundColor = .white
+        
         addHeaderViewComponent()
+        addHeaderViewComponentListeners()
+        
+        viewModel.getWeatherGroupForecastData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,9 +28,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     }
     
     private func addHeaderViewComponent() {
-        view.backgroundColor = ColorSpectrum.defaultBackground
-        
-        headerViewComponent = HeaderViewComponent(data: HeaderViewComponentData(title: BasicAttributedLabelData(text: "Cities").setTextFont(with: [SourceSansPro.SemiBold(40).value])).setRightIcon(by: ImageContainerData().setImage(with: VisualContents.searchIcon.value).setWidth(with: 40).setHeight(with: 40)))
+        headerViewComponent = HeaderViewComponent(data: viewModel.factory.returnHeaderViewComponentData())
         headerViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(headerViewComponent)
@@ -38,5 +41,11 @@ class MainViewController: BaseViewController<MainViewModel> {
         
         
         ])
+    }
+    
+    private func addHeaderViewComponentListeners() {
+        headerViewComponent.subscribeRightIconListener { [weak self] in
+            self?.viewModel.fireCitySearch()
+        }
     }
 }

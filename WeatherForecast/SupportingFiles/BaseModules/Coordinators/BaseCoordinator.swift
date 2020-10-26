@@ -1,6 +1,6 @@
 //
 //  BaseCoordinator.swift
-//  WeatherForeCast
+//  WeatherForecast
 //
 //  Created by Erkut Bas on 24.10.2020.
 //
@@ -22,23 +22,23 @@ public class BaseCoordinator<T: BaseViewModelDelegate>: NSObject, Coordinator {
     public var viewContoller = UIViewController()
     public var childCoordinators: [Coordinator] = []
     public var parentCoordinator: Coordinator?
-
+    
     public func start() {
         //fatalError("Start method should be implemented.")
     }
-
+    
     public func start(coordinator: Coordinator) {
         // binary search, tree etc ???
         self.childCoordinators += [coordinator]
         coordinator.parentCoordinator = self
         coordinator.start()
     }
-
+    
     public func removeChildCoordinators() {
         self.childCoordinators.forEach { $0.removeChildCoordinators() }
         self.childCoordinators.removeAll()
     }
-
+    
     public func didFinish(coordinator: Coordinator) {
         if let index = self.childCoordinators.firstIndex(where: { $0 === coordinator }) {
             self.childCoordinators.remove(at: index)

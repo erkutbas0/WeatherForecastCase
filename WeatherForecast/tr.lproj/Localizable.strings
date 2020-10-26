@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  WeatherForecast
+
+  Created by Erkut Bas on 26.10.2020.
+  
+*/
+
+// Mark: - Main View Strings -
+"mainView_HeaderTitle" = "Şehirler";
+
+// Mark: - City Search View Strings -
+"citySearchView_HeaderTitle" = "Şehir Arama";
+"citySearchView_CityPlaceHolder" = "Şehir...";
+"citySearchView_DailyCount" = "Günlük Sayı";
+"citySearchView_ContinueButtonTitle" = "Devam";

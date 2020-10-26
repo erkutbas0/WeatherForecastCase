@@ -1,6 +1,6 @@
 //
 //  Assembler+Extension.swift
-//  WeatherForeCast
+//  WeatherForecast
 //
 //  Created by Erkut Bas on 24.10.2020.
 //
@@ -15,7 +15,16 @@ extension Assembler {
        
         let container = Container()
         
-        let assembler = Assembler([CoordinatorsAssembly(), ManagerAssembly(), ViewModelsAssembly(), RepositoryAssembly(), UseCaseAssembly(), FormatterAssembly()], container: container)
+        let assembler = Assembler([CoordinatorsAssembly(),
+                                   ManagerAssembly(),
+                                   ViewModelsAssembly(),
+                                   RepositoryAssembly(),
+                                   RemoteAssembly(),
+                                   UseCaseAssembly(),
+                                   FormatterAssembly(),
+                                   ApiServiceAssembly(),
+                                   FactoryAssembly()],
+                                  container: container)
         return assembler
         
     }()

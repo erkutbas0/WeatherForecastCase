@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  WeatherForecast
+
+  Created by Erkut Bas on 26.10.2020.
+  
+*/
+
+// Mark: - Main View Strings -
+"mainView_HeaderTitle" = "Cities";
+
+// Mark: - City Search View Strings -
+"citySearchView_HeaderTitle" = "City Search";
+"citySearchView_CityPlaceHolder" = "City...";
+"citySearchView_DailyCount" = "Daily Count";
+"citySearchView_ContinueButtonTitle" = "Continue";

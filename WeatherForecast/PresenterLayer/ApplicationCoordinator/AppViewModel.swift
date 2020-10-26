@@ -6,12 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class AppViewModel: BaseViewModelDelegate {
-
-    func dismissCoordinator() {
-        
-    }
+    
+    var dismissInformer: PublishSubject<Void>?
     
     deinit {
         print("DEINIT AppViewModel)")

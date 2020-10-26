@@ -11,14 +11,15 @@ struct ConstantEndpoints {
     
     // MARK: - BaseUrls according to environments -
     struct BaseUrls {
-        static let developmentBaseEndpointUrl = "https://api.trendyol.com/"
-        static let testBaseEndpointUrl = "https://api.trendyol.com/"
-        static let qualityAssuranceBaseEndpointUrl = "https://api.trendyol.com/"
+        static let developmentBaseEndpointUrl = "https://api.openweathermap.org/"
+        static let testBaseEndpointUrl = "https://api.openweathermap.org/"
+        static let qualityAssuranceBaseEndpointUrl = "https://api.openweathermap.org/"
     }
     
     // MARK: - Paths ... -
     enum Paths {
-        case widget
+        case groupForecast
+        case dailyForecast
         
         /*
          
@@ -30,8 +31,10 @@ struct ConstantEndpoints {
         var path: String {
             switch self {
             // MARK: - Authentication Endpoints -
-            case .widget:
-                return "zeus/widget/display"
+            case .groupForecast:
+                return "data/2.5/group"
+            case .dailyForecast:
+                return "data/2.5/forecast/daily"
             }
         }
     }

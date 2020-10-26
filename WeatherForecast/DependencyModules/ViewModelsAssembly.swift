@@ -14,5 +14,6 @@ class ViewModelsAssembly: Assembly {
         container.autoregister(AppViewModel.self, initializer: AppViewModel.init).inObjectScope(.container)
         container.autoregister(MainViewModel.self, initializer: MainViewModel.init).inObjectScope(.weak)
         container.autoregister(SplashScreenViewModel.self, initializer: SplashScreenViewModel.init).inObjectScope(.weak)
+        container.autoregister(CitySearchViewModel.self, initializer: CitySearchViewModel.init).inObjectScope(.weak)
     }
 }

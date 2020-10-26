@@ -1,6 +1,6 @@
 //
 //  Array+Extension.swift
-//  WeatherForeCast
+//  WeatherForecast
 //
 //  Created by Erkut Bas on 24.10.2020.
 //
@@ -14,3 +14,4 @@ extension Array {
         return isValidIndex ? self[index] : nil
     }
 }
+

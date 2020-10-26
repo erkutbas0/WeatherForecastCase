@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 
 class SplashScreenViewModel: BaseViewModelDelegate {
+    var dismissInformer: PublishSubject<Void>?
 
     private var splashFinalize = BehaviorRelay<Bool>(value: false)
     
@@ -31,10 +32,6 @@ class SplashScreenViewModel: BaseViewModelDelegate {
     
     func fireSplashProcessFinish() {
         splashFinalize.accept(true)
-    }
-    
-    func dismissCoordinator() {
-        
     }
     
     deinit {

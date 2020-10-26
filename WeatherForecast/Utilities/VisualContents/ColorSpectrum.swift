@@ -24,7 +24,7 @@ public struct ColorSpectrum {
                 return color
             }
         }
-        return UIColor(redVal: 248, greenVal: 248, blueVal: 250, alphaVal: 1)
+        return UIColor(redVal: 246, greenVal: 246, blueVal: 250, alphaVal: 1)
     }
     
     public static var defaultWhite: UIColor {
@@ -34,6 +34,15 @@ public struct ColorSpectrum {
             }
         }
         return UIColor(redVal: 255, greenVal: 255, blueVal: 255, alphaVal: 1)
+    }
+    
+    public static var turquioseBackground: UIColor {
+        if #available(iOS 11, *) {
+            if let color = UIColor(named: "TurquioseBackground") {
+                return color
+            }
+        }
+        return UIColor(redVal: 58, greenVal: 204, blueVal: 255, alphaVal: 1)
     }
     
 }

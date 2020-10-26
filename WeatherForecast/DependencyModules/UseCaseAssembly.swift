@@ -6,13 +6,12 @@
 //
 
 import Foundation
-
-import Foundation
 import Swinject
 import SwinjectAutoregistration
 
 class UseCaseAssembly: Assembly {
     func assemble(container: Container) {
-//        container.autoregister(WidgetListUseCase.self, initializer: WidgetListUseCase.init).inObjectScope(.weak)
+        container.autoregister(WeatherGroupForecastUseCase.self, initializer: WeatherGroupForecastUseCase.init).inObjectScope(.weak)
+        container.autoregister(WeatherDailyForecastUseCase.self, initializer: WeatherDailyForecastUseCase.init).inObjectScope(.weak)
     }
 }

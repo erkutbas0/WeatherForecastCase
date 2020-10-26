@@ -13,7 +13,7 @@ import Alamofire
 class ManagerAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(NetworkConnectionManager.self, initializer: NetworkConnectionManager.init)
-        container.autoregister(CoreDataManager.self, initializer: CoreDataManager.init).inObjectScope(.container)
+        container.autoregister(CoreDataManager.self, initializer: CoreDataManager.init).inObjectScope(.weak)
         container.autoregister(TutorialManager.self, initializer: TutorialManager.init)
         container.autoregister(RequestRetrier.self, initializer: ApiRetrier.init).inObjectScope(.container)
         container.autoregister(RequestAdapter.self, initializer: ApiAdapter.init).inObjectScope(.container)

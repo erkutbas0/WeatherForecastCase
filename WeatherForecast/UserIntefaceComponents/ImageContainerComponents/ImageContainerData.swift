@@ -1,6 +1,6 @@
 //
 //  ImageContainerData.swift
-//  WeatherForeCast
+//  WeatherForecast
 //
 //  Created by Erkut Bas on 25.10.2020.
 //

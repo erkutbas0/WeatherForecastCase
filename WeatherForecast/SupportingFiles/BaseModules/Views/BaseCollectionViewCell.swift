@@ -1,6 +1,6 @@
 //
 //  BaseCollectionViewCell.swift
-//  WeatherForeCast
+//  WeatherForecast
 //
 //  Created by Erkut Bas on 24.10.2020.
 //

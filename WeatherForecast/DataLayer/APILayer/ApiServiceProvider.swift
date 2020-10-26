@@ -42,6 +42,9 @@ class ApiServiceProvider<T: CodableDataProtocol>: URLRequestConvertible {
         request.headers = headers
         request.cachePolicy = .reloadIgnoringCacheData
         
+//        let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(arrayEncoding: .noBrackets))
+//        return try encoder.encode(data, into: request)
+        
         return try encoding.encode(request, with: params)
         
     }
@@ -63,8 +66,6 @@ class ApiServiceProvider<T: CodableDataProtocol>: URLRequestConvertible {
     private var headers: HTTPHeaders {
         var httpHeaders = HTTPHeaders()
         httpHeaders.add(HTTPHeader(name: HTTPHeaderFields.contentType.value.0, value: HTTPHeaderFields.contentType.value.1))
-        httpHeaders.add(HTTPHeader(name: HTTPHeaderFields.build.value.0, value: HTTPHeaderFields.build.value.1))
-
         return httpHeaders
     }
     

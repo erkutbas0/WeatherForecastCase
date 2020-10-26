@@ -22,18 +22,17 @@ class MainCoordinator: BaseCoordinator<MainViewModel> {
     }
     
     private func subscribeForFurtherCoordinators() {
-//        viewModel.subscribeDetailPageNavigation { [weak self](product) in
-//            self?.goToDetailCoordinator(data: product)
-//        }.disposed(by: disposeBag)
+        viewModel.subscribeFireCitySearch { [weak self] in
+            self?.gotoCitySearchCoordinator()
+        }.disposed(by: disposeBag)
     }
     
-//    private func goToDetailCoordinator(data: Product?) {
-//        guard let product = data else { return }
-//        let coordinator = ProductDetailCoordinator(viewModel: ProductDetailViewModel(product: product))
-//        start(coordinator: coordinator)
-//
-//        self.navigationController.pushViewController(coordinator.viewContoller, animated: true)
-//    }
+    private func gotoCitySearchCoordinator() {
+        guard let coordinator = AssemblerResolver.resolve(CitySearchCoordinator.self) else { return }
+        start(coordinator: coordinator)
+        
+        navigationController.present(coordinator.viewContoller, animated: true, completion: nil)
+    }
     
     deinit {
         print("DEINIT MainCoordinator")

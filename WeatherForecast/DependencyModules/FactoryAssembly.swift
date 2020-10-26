@@ -13,5 +13,6 @@ class FactoryAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(MainViewFactoryBuilderInterface.self, initializer: MainViewFactoryBuilder.init).inObjectScope(.weak)
         container.autoregister(CitySearchViewFactoryInterface.self, initializer: CitySearchViewFactory.init).inObjectScope(.weak)
+        container.autoregister(DetailViewFactoryInterface.self, initializer: DetailViewFactory.init).inObjectScope(.weak)
     }
 }

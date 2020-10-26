@@ -9,13 +9,13 @@ import UIKit
 
 class TempratureViewComponentData {
     
-    private(set) var text: String
+    private(set) var value: Double?
     private(set) var textColor: Array<UIColor> = [ColorSpectrum.defaultWhite]
     private(set) var textFont: Array<UIFont?> = [SourceSansPro.Regular(14).value]
     private(set) var textAlignment: NSTextAlignment = .left
     
-    init(text: String) {
-        self.text = text
+    init(value: Double?) {
+        self.value = value
     }
     
     func setTextColor(with value: Array<UIColor>) -> Self {

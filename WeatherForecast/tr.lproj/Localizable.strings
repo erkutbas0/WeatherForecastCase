@@ -14,3 +14,7 @@
 "citySearchView_CityPlaceHolder" = "Şehir...";
 "citySearchView_DailyCount" = "Günlük Sayı";
 "citySearchView_ContinueButtonTitle" = "Devam";
+
+// Mark: - Detail View Strings -
+"detailView_highestDegreePrefix" = "Y";
+"detailView_lowestDegreePrefix" = "D";

@@ -13,9 +13,9 @@ class TempratureViewComponent: BaseDynamicAttributedLabel<TempratureViewComponen
         super.loadData()
         
         guard let data = returnData() else { return }
-        guard let font = data.textFont[0] else { return }
+        guard let text = data.value, let font = data.textFont[0] else { return }
         
-        attributedText = NSMutableAttributedString(string: "\(data.text)°", attributes: [.font : font, .foregroundColor: data.textColor[0]])
+        attributedText = NSMutableAttributedString(string: "\(text)°", attributes: [.font : font, .foregroundColor: data.textColor[0]])
     }
     
 }

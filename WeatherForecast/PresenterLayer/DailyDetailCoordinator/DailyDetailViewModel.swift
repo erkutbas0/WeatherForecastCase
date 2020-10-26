@@ -13,6 +13,19 @@ class DailyDetailViewModel: BaseViewModelDelegate {
 
     var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
     
+    public var factory: DetailViewFactoryInterface!
+    private var data: WeatherDailyForecastResponse?
+    
+    init(factory: DetailViewFactoryInterface, data: WeatherDailyForecastResponse) {
+        self.factory = factory
+        self.data = data
+    }
+    
+    func getDailyForecastDetailViewComponentData() -> DailyForecastDetailViewComponentData? {
+        guard let data = data else { return nil}
+        return factory.returnDailyForecastDetailViewComponentData(response: data)
+    }
+    
 //    private var dailyUsecase: WeatherDailyForecastUseCase!
 //    private var dailyUsecaseCallback = WeatherDailyForecastCallBack()
 //    public var factory: CitySearchViewFactoryInterface!

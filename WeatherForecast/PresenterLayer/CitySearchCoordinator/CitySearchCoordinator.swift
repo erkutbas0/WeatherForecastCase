@@ -24,8 +24,8 @@ class CitySearchCoordinator: BaseCoordinator<CitySearchViewModel> {
         }
         result?.disposed(by: disposeBag)
         
-        let detailFlow = viewModel.subscribeDetailFlow { [weak self] in
-            self?.fireDetailCoordinator()
+        let detailFlow = viewModel.subscribeDetailFlow { [weak self](data) in
+            self?.fireDetailCoordinator(data: data)
         }
         detailFlow.disposed(by: disposeBag)
     }
@@ -34,8 +34,9 @@ class CitySearchCoordinator: BaseCoordinator<CitySearchViewModel> {
         parentCoordinator?.didFinish(coordinator: self)
     }
     
-    private func fireDetailCoordinator() {
-        let detail = DailyDetailCoordinator(viewModel: DailyDetailViewModel())
+    private func fireDetailCoordinator(data: WeatherDailyForecastResponse) {
+        guard let factory = AssemblerResolver.resolve(DetailViewFactoryInterface.self) else { return }
+        let detail = DailyDetailCoordinator(viewModel: DailyDetailViewModel(factory: factory, data: data))
         start(coordinator: detail)
         
         self.viewContoller.present(detail.viewContoller, animated: true, completion: nil)

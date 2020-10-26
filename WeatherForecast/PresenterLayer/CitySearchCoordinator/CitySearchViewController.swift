@@ -33,6 +33,7 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
     
     private func setupViewProperties() {
         view.backgroundColor = ColorSpectrum.defaultBackground
+        hideKeyboardWhenTappedAround()
     }
     
     private func addHeaderViewComponent() {

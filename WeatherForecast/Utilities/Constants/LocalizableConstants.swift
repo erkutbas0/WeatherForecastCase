@@ -9,6 +9,7 @@ import Foundation
 
 public typealias MainViewLocalizables = LocalizableString.MainViewLocalizables
 public typealias CitySearchViewLocalizables = LocalizableString.CitySearchViewLocalizables
+public typealias DetailViewLocalizables = LocalizableString.DetailViewLocalizables
 
 public enum LocalizableString {
     
@@ -23,6 +24,7 @@ public enum LocalizableString {
                 return "mainView_HeaderTitle".toLocalize()
             }
         }
+        
     }
     
     public enum CitySearchViewLocalizables: GenericValueProtocol {
@@ -45,6 +47,24 @@ public enum LocalizableString {
                 return "citySearchView_ContinueButtonTitle".toLocalize()
             }
         }
+    }
+    
+    public enum DetailViewLocalizables: GenericValueProtocol {
+        
+        case highestDegreePrefix
+        case lowestDegreePrefix
+
+        typealias Value = String
+        
+        var value: String {
+            switch self {
+            case .highestDegreePrefix:
+                return "detailView_highestDegreePrefix".toLocalize()
+            case .lowestDegreePrefix:
+                return "detailView_lowestDegreePrefix".toLocalize()
+            }
+        }
+        
     }
     
 }

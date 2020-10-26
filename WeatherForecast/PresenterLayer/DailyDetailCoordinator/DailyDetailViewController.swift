@@ -25,7 +25,8 @@ class DailyDetailViewController: BaseViewController<DailyDetailViewModel> {
     }
     
     private func addDetailViewComponent() {
-        detailViewComponent = DailyForecastDetailViewComponent()
+        guard let data = viewModel.getDailyForecastDetailViewComponentData() else { return }
+        detailViewComponent = DailyForecastDetailViewComponent(data: data)
         detailViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(detailViewComponent)

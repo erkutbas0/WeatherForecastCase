@@ -282,6 +282,15 @@
 		A79C37AE254759C4006D732A /* DailyDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37AD254759C4006D732A /* DailyDetailCoordinator.swift */; };
 		A79C37B3254759D1006D732A /* DailyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37B2254759D0006D732A /* DailyDetailViewModel.swift */; };
 		A79C37B8254759DA006D732A /* DailyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37B7254759DA006D732A /* DailyDetailViewController.swift */; };
+		A79C37BD25476DF9006D732A /* DetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37BC25476DF9006D732A /* DetailViewFactory.swift */; };
+		A79C37C225476E21006D732A /* DetailViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37C125476E21006D732A /* DetailViewFactoryInterface.swift */; };
+		A79C37CB25477439006D732A /* DetailInfoViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37CA25477439006D732A /* DetailInfoViewComponent.swift */; };
+		A79C37D925477460006D732A /* DetailInfoViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37D825477460006D732A /* DetailInfoViewComponentData.swift */; };
+		A79C37DE254774DA006D732A /* TempratureDetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37DD254774DA006D732A /* TempratureDetailComponent.swift */; };
+		A79C37E3254774F0006D732A /* TempratureDetailComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37E2254774F0006D732A /* TempratureDetailComponentData.swift */; };
+		A79C37E825477569006D732A /* TempratureDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37E725477569006D732A /* TempratureDetailLabel.swift */; };
+		A79C37ED25477570006D732A /* TempratureDetailLabelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37EC25477570006D732A /* TempratureDetailLabelData.swift */; };
+		A79C380125477F8E006D732A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C380025477F8E006D732A /* UIViewController+Extension.swift */; };
 		A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */; };
 		A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC032544BBA500683BB3 /* ViewController.swift */; };
 		A7C9BC0A2544BBA500683BB3 /* WeatherForeCast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC082544BBA500683BB3 /* WeatherForeCast.xcdatamodeld */; };
@@ -512,6 +521,15 @@
 		A79C37AD254759C4006D732A /* DailyDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDetailCoordinator.swift; sourceTree = "<group>"; };
 		A79C37B2254759D0006D732A /* DailyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDetailViewModel.swift; sourceTree = "<group>"; };
 		A79C37B7254759DA006D732A /* DailyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDetailViewController.swift; sourceTree = "<group>"; };
+		A79C37BC25476DF9006D732A /* DetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFactory.swift; sourceTree = "<group>"; };
+		A79C37C125476E21006D732A /* DetailViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFactoryInterface.swift; sourceTree = "<group>"; };
+		A79C37CA25477439006D732A /* DetailInfoViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewComponent.swift; sourceTree = "<group>"; };
+		A79C37D825477460006D732A /* DetailInfoViewComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewComponentData.swift; sourceTree = "<group>"; };
+		A79C37DD254774DA006D732A /* TempratureDetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailComponent.swift; sourceTree = "<group>"; };
+		A79C37E2254774F0006D732A /* TempratureDetailComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailComponentData.swift; sourceTree = "<group>"; };
+		A79C37E725477569006D732A /* TempratureDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailLabel.swift; sourceTree = "<group>"; };
+		A79C37EC25477570006D732A /* TempratureDetailLabelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailLabelData.swift; sourceTree = "<group>"; };
+		A79C380025477F8E006D732A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A7C9BBFC2544BBA500683BB3 /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C9BC032544BBA500683BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -684,6 +702,7 @@
 				A70FA54E254567180017FE92 /* UITableView+Extensions.swift */,
 				A70FA54F254567180017FE92 /* Assembler+Extension.swift */,
 				A70FA550254567180017FE92 /* Array+Extension.swift */,
+				A79C380025477F8E006D732A /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1061,6 +1080,8 @@
 				A79C372525471C27006D732A /* MainViewFactoryBuilderInterface.swift */,
 				A79C372A25471DF8006D732A /* CitySearchViewFactory.swift */,
 				A79C372F25471E01006D732A /* CitySearchViewFactoryInterface.swift */,
+				A79C37C125476E21006D732A /* DetailViewFactoryInterface.swift */,
+				A79C37BC25476DF9006D732A /* DetailViewFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1199,6 +1220,10 @@
 				A7F347492545F2C2003DE7DC /* HeaderViewComponentTheme.swift */,
 				A79C378A254750E7006D732A /* DetailHeaderViewComponent.swift */,
 				A79C378F2547526C006D732A /* DetailHeaderViewComponentData.swift */,
+				A79C37CA25477439006D732A /* DetailInfoViewComponent.swift */,
+				A79C37D825477460006D732A /* DetailInfoViewComponentData.swift */,
+				A79C37DD254774DA006D732A /* TempratureDetailComponent.swift */,
+				A79C37E2254774F0006D732A /* TempratureDetailComponentData.swift */,
 			);
 			path = HeaderViewComponents;
 			sourceTree = "<group>";
@@ -1220,6 +1245,8 @@
 				A7F347732545FF05003DE7DC /* BasicAttributedLabelData.swift */,
 				A73C332925464F3F00B0DD17 /* TempratureViewComponent.swift */,
 				A73C333125464F4600B0DD17 /* TempratureViewComponentData.swift */,
+				A79C37E725477569006D732A /* TempratureDetailLabel.swift */,
+				A79C37EC25477570006D732A /* TempratureDetailLabelData.swift */,
 			);
 			path = AttributedLabelComponents;
 			sourceTree = "<group>";
@@ -1650,6 +1677,7 @@
 				A79C37AE254759C4006D732A /* DailyDetailCoordinator.swift in Sources */,
 				A70FA5CD254567180017FE92 /* BaseTableViewCell.swift in Sources */,
 				A7F347752545FF05003DE7DC /* BasicAttributedLabelData.swift in Sources */,
+				A79C37C225476E21006D732A /* DetailViewFactoryInterface.swift in Sources */,
 				A70FA58F254567180017FE92 /* Encodable+Extension.swift in Sources */,
 				A70FA5C3254567180017FE92 /* BaseResponse.swift in Sources */,
 				A79C378B254750E7006D732A /* DetailHeaderViewComponent.swift in Sources */,
@@ -1694,6 +1722,7 @@
 				A79C377E25474E21006D732A /* LoadingViewComponent.swift in Sources */,
 				A70FA59B254567180017FE92 /* BaseCoordinator.swift in Sources */,
 				A70FA62725456C8F0017FE92 /* UseCaseCallBack.swift in Sources */,
+				A79C37CB25477439006D732A /* DetailInfoViewComponent.swift in Sources */,
 				A70FA5A1254567180017FE92 /* ApiConnectionErrorType.swift in Sources */,
 				A7F3474A2545F2C2003DE7DC /* HeaderViewComponentTheme.swift in Sources */,
 				A73C32D12546311500B0DD17 /* RepositoryAssembly.swift in Sources */,
@@ -1723,6 +1752,7 @@
 				A70FA67025456CCF0017FE92 /* ConstantEndpoints.swift in Sources */,
 				A70FA5A7254567180017FE92 /* StoryBoardIdentifiers.swift in Sources */,
 				A7FD4EBB2546B06700A07FD3 /* WeatherForecastRepositoryInterface.swift in Sources */,
+				A79C37E825477569006D732A /* TempratureDetailLabel.swift in Sources */,
 				A73C330B2546422A00B0DD17 /* CityWeatherInfoCell.swift in Sources */,
 				A70FA5A3254567180017FE92 /* HeaderFields.swift in Sources */,
 				A70FA5A5254567180017FE92 /* ApplicationStoryBoards.swift in Sources */,
@@ -1731,6 +1761,7 @@
 				A70FA67625456CCF0017FE92 /* VisualContent.swift in Sources */,
 				A70FA59D254567180017FE92 /* ServerResponse.swift in Sources */,
 				A7FD4E6C2546A91300A07FD3 /* Wind.swift in Sources */,
+				A79C37DE254774DA006D732A /* TempratureDetailComponent.swift in Sources */,
 				A7FD4E9E2546AE4300A07FD3 /* WeatherGroupForecastUseCase.swift in Sources */,
 				A70FA4E32544D37D0017FE92 /* ApiEventMonitor.swift in Sources */,
 				A70FA5ED254567180017FE92 /* BaseViewModelDelegate.swift in Sources */,
@@ -1741,6 +1772,7 @@
 				A70FA5C1254567180017FE92 /* BaseRequest.swift in Sources */,
 				A70FA5DB254567180017FE92 /* CodableDataProtocol.swift in Sources */,
 				A70FA6A625456CCF0017FE92 /* FontManager.swift in Sources */,
+				A79C37BD25476DF9006D732A /* DetailViewFactory.swift in Sources */,
 				A79C3773254742F1006D732A /* WeatherDailyForecastServiceModule.swift in Sources */,
 				A70FA5E3254567180017FE92 /* GenericDataProtocol.swift in Sources */,
 				A73C32BD254629CC00B0DD17 /* SplashScreenViewController.swift in Sources */,
@@ -1749,6 +1781,7 @@
 				A70FA66A25456CCF0017FE92 /* UserDefaultsGenericStructWrapper.swift in Sources */,
 				A70FA5092545619B0017FE92 /* City.swift in Sources */,
 				A70FA5BD254567180017FE92 /* DynamicLabelProtocol.swift in Sources */,
+				A79C37E3254774F0006D732A /* TempratureDetailComponentData.swift in Sources */,
 				A70FA516254562810017FE92 /* WeatherDailyList.swift in Sources */,
 				A70FA595254567180017FE92 /* UITableView+Extensions.swift in Sources */,
 				A7F347422545EE2E003DE7DC /* HeaderViewComponentData.swift in Sources */,
@@ -1760,6 +1793,7 @@
 				A7FD4E802546AA1C00A07FD3 /* WeatherGroupForecastResponse.swift in Sources */,
 				A79C370B2546EA53006D732A /* CitySearchCoordinator.swift in Sources */,
 				A70FA5B5254567180017FE92 /* SingleUseCase.swift in Sources */,
+				A79C37D925477460006D732A /* DetailInfoViewComponentData.swift in Sources */,
 				A70FA5BF254567180017FE92 /* DataModel.swift in Sources */,
 				A79C372625471C27006D732A /* MainViewFactoryBuilderInterface.swift in Sources */,
 				A79C37902547526C006D732A /* DetailHeaderViewComponentData.swift in Sources */,
@@ -1786,7 +1820,9 @@
 				A7FD4E712546A95000A07FD3 /* CityWeatherMainData.swift in Sources */,
 				A79C374C254729FA006D732A /* FilterViewComponent.swift in Sources */,
 				A70FA62925456C8F0017FE92 /* UseCaseCallBackInteractor.swift in Sources */,
+				A79C380125477F8E006D732A /* UIViewController+Extension.swift in Sources */,
 				A73C333225464F4600B0DD17 /* TempratureViewComponentData.swift in Sources */,
+				A79C37ED25477570006D732A /* TempratureDetailLabelData.swift in Sources */,
 				A79C372125471BE3006D732A /* MainViewFactoryBuilder.swift in Sources */,
 				A79C37152546EA69006D732A /* CitySearchViewController.swift in Sources */,
 				A70FA5A9254567180017FE92 /* DataLoadingState.swift in Sources */,
@@ -2060,7 +2096,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampleCompany.WeatherForeCast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleCompany.WeatherForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2081,7 +2117,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampleCompany.WeatherForeCast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampleCompany.WeatherForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

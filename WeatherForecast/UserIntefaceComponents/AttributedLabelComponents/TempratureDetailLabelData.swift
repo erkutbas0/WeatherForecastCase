@@ -1,21 +1,23 @@
 //
-//  BasicAttributedLabelData.swift
+//  TempratureDetailLabelData.swift
 //  WeatherForecast
 //
-//  Created by Erkut Bas on 25.10.2020.
+//  Created by Erkut Bas on 27.10.2020.
 //
 
 import UIKit
 
-class BasicAttributedLabelData {
+class TempratureDetailLabelData {
     
-    private(set) var text: String?
+    private(set) var degreeText: String?
+    private(set) var degreeValue: Double?
     private(set) var textColor: Array<UIColor> = [ColorSpectrum.defaultWhite]
     private(set) var textFont: Array<UIFont?> = [SourceSansPro.Regular(14).value]
     private(set) var textAlignment: NSTextAlignment = .left
     
-    init(text: String?) {
-        self.text = text
+    init(degreeText: String?, degreeValue: Double?) {
+        self.degreeText = degreeText
+        self.degreeValue = degreeValue
     }
     
     func setTextColor(with value: Array<UIColor>) -> Self {

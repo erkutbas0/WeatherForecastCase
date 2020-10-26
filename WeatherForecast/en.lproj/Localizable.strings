@@ -14,3 +14,7 @@
 "citySearchView_CityPlaceHolder" = "City...";
 "citySearchView_DailyCount" = "Daily Count";
 "citySearchView_ContinueButtonTitle" = "Continue";
+
+// Mark: - Detail View Strings -
+"detailView_highestDegreePrefix" = "H";
+"detailView_lowestDegreePrefix" = "L";

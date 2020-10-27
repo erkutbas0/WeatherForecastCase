@@ -20,8 +20,4 @@ class WeatherGroupForecastUseCase: SingleUseCase<WeatherGroupForecastRequest, We
         return repository.getCurrentGroupForecast(params: parameter)
     }
     
-    deinit {
-        print("DEINIT WidgetListUseCase")
-    }
-    
 }

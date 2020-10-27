@@ -56,8 +56,4 @@ class WeatherForecastCoreDataManager: WeatherForecastCoreDataManagerInterface {
         cityList = coreDataManager.fetch(RegisteredCityList.self)
     }
     
-    deinit {
-        print("DEINIT WeatherForecastCoreDataManager")
-    }
-    
 }

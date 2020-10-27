@@ -47,8 +47,4 @@ class MainCoordinator: BaseCoordinator<MainViewModel> {
         navigationController.present(coordinator.viewContoller, animated: true, completion: nil)
     }
     
-    deinit {
-        print("DEINIT MainCoordinator")
-    }
-    
 }

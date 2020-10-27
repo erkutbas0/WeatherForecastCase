@@ -24,8 +24,4 @@ class WeatherForecastRepository: WeatherForecastRepositoryInterface {
         return apiRemote.getDailyForecast(params: params)
     }
 
-    deinit {
-        print("DEINIT WeatherForecastRepository")
-    }
-
 }

@@ -48,8 +48,4 @@ class CitySearchCoordinator: BaseCoordinator<CitySearchViewModel> {
         self?.terminateCoordinator()
     }
     
-    deinit {
-        print("DEINIT CitySearchCoordinator")
-    }
-    
 }

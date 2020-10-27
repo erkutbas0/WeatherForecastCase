@@ -26,8 +26,4 @@ class WeatherForecastApiRemote: WeatherForecastRemoteInterface {
         return apiManager.executeRequest(urlRequestConvertible: apiService.getWeatherDailyForecastApiServiceModule(request: params))
     }
     
-    deinit {
-        print("DEINIT WeatherForecastApiRemote")
-    }
-    
 }

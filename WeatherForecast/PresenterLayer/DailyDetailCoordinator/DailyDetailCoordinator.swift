@@ -36,8 +36,5 @@ class DailyDetailCoordinator: BaseCoordinator<DailyDetailViewModel> {
         return terminaterPublisher.subscribe(onNext: completion)
     }
     
-    deinit {
-        print("DEINIT DailyDetailCoordinator")
-    }
     
 }

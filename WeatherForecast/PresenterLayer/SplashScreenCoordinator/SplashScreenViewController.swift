@@ -45,8 +45,4 @@ class SplashScreenViewController: BaseViewController<SplashScreenViewModel>, Awa
         })
     }
     
-    deinit {
-        print("DEINIT SplashScreenViewController")
-    }
-    
 }

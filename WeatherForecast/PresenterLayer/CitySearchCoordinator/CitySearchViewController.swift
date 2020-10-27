@@ -99,7 +99,6 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
     
     private func addActionButtonViewComponentListeners() {
         actionButtonViewComponent.subscribeActionButtonViewComponent { [weak self](pressed) in
-            print("pressed")
             self?.startToGetDailyData()
         }
     }
@@ -121,10 +120,6 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
                 self?.stopIndicatingActivity()
             }
         }?.disposed(by: disposeBag)
-    }
-    
-    deinit {
-        print("DEINIT CitySearchViewController")
     }
     
 }

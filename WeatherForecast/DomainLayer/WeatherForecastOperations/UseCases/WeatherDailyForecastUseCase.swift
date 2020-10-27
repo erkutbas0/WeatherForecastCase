@@ -20,8 +20,4 @@ class WeatherDailyForecastUseCase: SingleUseCase<WeatherDailyForecastRequest, We
         return repository.getDailyForecast(params: parameter)
     }
     
-    deinit {
-        print("DEINIT WeatherDailyForecastUseCase")
-    }
-    
 }

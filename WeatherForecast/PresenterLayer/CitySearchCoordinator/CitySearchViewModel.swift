@@ -65,8 +65,4 @@ class CitySearchViewModel: BaseViewModelDelegate {
         return fireDetailFlow.subscribe(onNext: completion)
     }
     
-    deinit {
-        print("DEINIT CitySearchViewModel")
-    }
-    
 }

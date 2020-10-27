@@ -36,8 +36,4 @@ class SplashScreenViewModel: BaseViewModelDelegate {
         splashFinalize.accept(true)
     }
     
-    deinit {
-        print("DEINIT SplashScreenViewModel")
-    }
-    
 }

@@ -13,8 +13,4 @@ class WeatherGroupForecastServiceModule: ApiServiceProvider<WeatherGroupForecast
         super.init(method: .get, path: ConstantEndpoints.Paths.groupForecast.path, data: request)
     }
     
-    deinit {
-        print("DEINIT WeatherGroupForecastServiceModule")
-    }
-    
 }

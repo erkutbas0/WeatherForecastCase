@@ -13,8 +13,4 @@ class WeatherDailyForecastServiceModule: ApiServiceProvider<WeatherDailyForecast
         super.init(method: .get, path: ConstantEndpoints.Paths.dailyForecast.path, data: request)
     }
     
-    deinit {
-        print("DEINIT WeatherDailyForecastServiceModule")
-    }
-    
 }

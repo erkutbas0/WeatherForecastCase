@@ -1,5 +1,5 @@
 //
-//  CartOperationsCoreDataManagerInterface.swift
+//  WeatherForecastCoreDataManagerInterface.swift
 //  WeatherForecast
 //
 //  Created by Erkut Bas on 27.10.2020.

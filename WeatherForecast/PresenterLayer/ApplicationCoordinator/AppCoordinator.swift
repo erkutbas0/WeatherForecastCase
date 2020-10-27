@@ -92,8 +92,4 @@ class AppCoordinator: BaseCoordinator<AppViewModel> {
         
     }
     
-    deinit {
-        print("DEINIT \(AppCoordinator.identifier)")
-    }
-    
 }

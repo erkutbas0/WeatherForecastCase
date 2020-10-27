@@ -23,8 +23,4 @@ class SingleUseCase<Params, T>: BaseUseCase<Params, Single<T>> {
         useCaseCallBack.onError(error: error)
     }
     
-    deinit {
-        print("DEINIT SingleUseCase")
-    }
-    
 }

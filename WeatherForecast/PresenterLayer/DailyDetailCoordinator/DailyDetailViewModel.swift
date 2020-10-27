@@ -42,8 +42,4 @@ class DailyDetailViewModel: BaseViewModelDelegate {
         return factory.returnDailyInfoViewData(data: item, timeZone: data.city?.timezone ?? 10800)
     }
 
-    deinit {
-        print("DEINIT DailyDetailViewModel")
-    }
-    
 }

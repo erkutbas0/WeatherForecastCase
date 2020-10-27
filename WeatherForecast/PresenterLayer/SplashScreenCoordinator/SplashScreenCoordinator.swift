@@ -42,8 +42,4 @@ class SplashScreenCoordinator: BaseCoordinator<SplashScreenViewModel> {
         return splashFinalize.subscribe(onNext: completion)
     }
     
-    deinit {
-        print("DEINIT SplashScreenCoordinator")
-    }
-    
 }

@@ -143,7 +143,4 @@ class MainViewModel: BaseViewModelDelegate {
         return data[index]
     }
     
-    deinit {
-        print("DEINIT MainViewModel")
-    }
 }

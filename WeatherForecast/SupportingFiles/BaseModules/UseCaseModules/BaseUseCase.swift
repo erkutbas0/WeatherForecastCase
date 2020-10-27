@@ -27,7 +27,4 @@ class BaseUseCase<P, T>: BaseUseCaseInterface {
 
     }
     
-    deinit {
-        print("DEINIT BaseUseCase")
-    }
 }

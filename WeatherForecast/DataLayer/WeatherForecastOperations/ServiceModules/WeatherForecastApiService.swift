@@ -15,8 +15,4 @@ class WeatherForecastApiService {
         return WeatherDailyForecastServiceModule(request: request)
     }
     
-    deinit {
-        print("DEINIT WeatherForecastApiService")
-    }
-    
 }

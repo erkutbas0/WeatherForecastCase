@@ -49,10 +49,6 @@ class DailyDetailViewController: BaseViewController<DailyDetailViewModel> {
         }
     }
     
-    deinit {
-        print("DEINIT DailyDetailViewController")
-    }
-    
 }
 
 extension DailyDetailViewController: DailyForecastDetailViewComponentDelegate {

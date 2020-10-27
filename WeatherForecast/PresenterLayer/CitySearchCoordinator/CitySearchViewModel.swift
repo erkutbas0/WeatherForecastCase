@@ -10,16 +10,20 @@ import RxSwift
 
 typealias DailyForecastResultClosure = (Result<WeatherDailyForecastResponse, ErrorResponse>) -> Void
 typealias DailyForecastResponseClosure = (WeatherDailyForecastResponse) -> Void
+typealias ErrorPublishClosure = (CustomAlertData) -> Void
 
 class CitySearchViewModel: BaseViewModelDelegate {
 
     var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
-    private var fireDetailFlow = PublishSubject<WeatherDailyForecastResponse>()
+    var errorPublisher: PublishSubject<CustomAlertData>? = PublishSubject<CustomAlertData>()
     
+    private var fireDetailFlow = PublishSubject<WeatherDailyForecastResponse>()
+
     private var coreDataOperator: WeatherForecastCoreDataManagerInterface!
     private var observerManager: MainCoordinatorObserverManager!
     private var dailyUsecase: WeatherDailyForecastUseCase!
     private var dailyUsecaseCallback = WeatherDailyForecastCallBack()
+
     public var factory: CitySearchViewFactoryInterface!
     
     init(dailyUsecase: WeatherDailyForecastUseCase, factory: CitySearchViewFactoryInterface, coreDataOperator: WeatherForecastCoreDataManagerInterface, observerManager: MainCoordinatorObserverManager) {
@@ -37,7 +41,7 @@ class CitySearchViewModel: BaseViewModelDelegate {
     private lazy var callBackListener: DailyForecastResultClosure = { [weak self] result in
         switch result {
         case .failure(let error):
-            print("error : \(error)")
+            self?.errorPublisher?.onNext(CustomAlertData(message: error.serverResponse?.message))
         case .success(let data):
             self?.fireDetailFlowAndRegisterTheCity(data: data)
         }

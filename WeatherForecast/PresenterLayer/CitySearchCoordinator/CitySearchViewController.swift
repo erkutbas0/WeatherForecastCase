@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class CitySearchViewController: BaseViewController<CitySearchViewModel> {
+    
+    private let disposeBag = DisposeBag()
     
     private var headerViewComponent: HeaderViewComponent!
     private var filterViewComponent: FilterViewComponent!
@@ -29,6 +32,8 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
         addActionButtonViewComponent()
         addActionButtonViewComponentListeners()
         
+        // Mark: - ViewModel Listeners -
+        addViewModelListeners()
     }
     
     private func setupViewProperties() {
@@ -60,7 +65,7 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
     }
     
     private func addFilterViewComponent() {
-        filterViewComponent = FilterViewComponent()
+        filterViewComponent = FilterViewComponent(data: viewModel.factory.returnFilterViewComponentData())
         filterViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(filterViewComponent)
@@ -101,6 +106,12 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
     
     private func startToGetDailyData() {
         viewModel.getDailyForecastData(textFieldsData: filterViewComponent.getTextValues())
+    }
+    
+    private func addViewModelListeners() {
+        viewModel.subscribeErrorPublisher { [weak self](alertData) in
+            self?.fireCustomAlert(data: alertData, completion: nil)
+        }?.disposed(by: disposeBag)
     }
     
     deinit {

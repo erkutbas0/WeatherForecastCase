@@ -34,10 +34,14 @@ class MainViewController: BaseViewController<MainViewModel> {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func addHeaderViewComponent() {
         headerViewComponent = HeaderViewComponent(data: viewModel.factory.returnHeaderViewComponentData())
         headerViewComponent.translatesAutoresizingMaskIntoConstraints = false
-        
+
         view.addSubview(headerViewComponent)
         
         NSLayoutConstraint.activate([
@@ -61,6 +65,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         cityListViewComponent.setDelegate(self)
         
         view.addSubview(cityListViewComponent)
+        view.bringSubviewToFront(headerViewComponent)
         
         NSLayoutConstraint.activate([
         
@@ -76,6 +81,10 @@ class MainViewController: BaseViewController<MainViewModel> {
         cityListViewComponent.subscribeSelectedCity { [weak self](cityId) in
             self?.viewModel.getDailyForecastData(cityId: cityId)
         }
+        
+        cityListViewComponent.subscribeRemovedCity { [weak self](cityId) in
+            self?.viewModel.removeCity(with: cityId)
+        }
     }
     
     private func addViewModelListeners() {
@@ -89,6 +98,10 @@ class MainViewController: BaseViewController<MainViewModel> {
                 break
             }
         }.disposed(by: disposeBag)
+        
+        viewModel.subscribeErrorPublisher { [weak self](alertData) in
+            self?.fireCustomAlert(data: alertData, completion: nil)
+        }
     }
     
 }

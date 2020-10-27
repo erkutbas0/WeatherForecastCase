@@ -12,6 +12,11 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
     private lazy var containerView: UIView = {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.backgroundColor = .white
+        temp.layer.shadowColor = UIColor.black.cgColor
+        temp.layer.shadowOffset = CGSize(width: 0, height: 5)
+        temp.layer.shadowRadius = 8
+        temp.layer.shadowOpacity = 0.8
         return temp
     }()
     

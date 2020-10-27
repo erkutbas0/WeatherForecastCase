@@ -11,6 +11,7 @@ import RxSwift
 public protocol BaseViewModelDelegate: AnyObject {
     
     var dismissInformer: PublishSubject<Void>? { get }
+    var errorPublisher: PublishSubject<CustomAlertData>? { get }
     //func dismissCoordinator()
     
 }
@@ -23,4 +24,9 @@ extension BaseViewModelDelegate {
     func subscribeDismissProcess(_ completion: @escaping OnDismissed) -> Disposable? {
         return dismissInformer?.subscribe(onNext: completion)
     }
+
+    func subscribeErrorPublisher(_ completion: @escaping ErrorPublishClosure) -> Disposable? {
+        return errorPublisher?.subscribe(onNext: completion)
+    }
+    
 }

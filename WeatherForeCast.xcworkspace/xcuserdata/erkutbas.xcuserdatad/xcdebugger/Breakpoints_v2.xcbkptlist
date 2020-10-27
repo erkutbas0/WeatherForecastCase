@@ -7,64 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7562A638-2372-4DAA-9AD2-C0C66795D889"
+            uuid = "E8D177C1-1679-4247-9F0B-8FF4DBBEB534"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/PresenterLayer/MainCoordinator/MainViewModel.swift"
+            filePath = "WeatherForecast/DataLayer/WeatherForecastOperations/CoreDataModule/WeatherForecastCoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "dailyCallBackListener"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "29D4F443-AE5B-421B-9F97-6FB91BCD0FA2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/DataLayer/WeatherForecastOperations/Remote/WeatherForecastApiRemote.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getDailyForecast(params:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "removeFromCoreData(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8DE0C712-F874-4ABB-80A7-09980DFDA84A"
+            uuid = "58883321-3D4A-4A3F-A94D-24357E76862A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherForecast/PresenterLayer/MainCoordinator/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "getDailyForecastData(cityId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3391C6F9-61F4-4D79-A837-5941B455FCC3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/SupportingFiles/BaseModules/Views/GenericTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "subscribeToSelectedRow(completion:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getWeatherGroupForecastData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,6 +10,7 @@ import Foundation
 public typealias MainViewLocalizables = LocalizableString.MainViewLocalizables
 public typealias CitySearchViewLocalizables = LocalizableString.CitySearchViewLocalizables
 public typealias DetailViewLocalizables = LocalizableString.DetailViewLocalizables
+public typealias WarningLocalizables = LocalizableString.WarningLocalizables
 
 public enum LocalizableString {
     
@@ -62,6 +63,21 @@ public enum LocalizableString {
                 return "detailView_highestDegreePrefix".toLocalize()
             case .lowestDegreePrefix:
                 return "detailView_lowestDegreePrefix".toLocalize()
+            }
+        }
+        
+    }
+    
+    public enum WarningLocalizables: GenericValueProtocol {
+        
+        case warningTitle
+
+        typealias Value = String
+        
+        var value: String {
+            switch self {
+            case .warningTitle:
+                return "warningTitle".toLocalize()
             }
         }
         

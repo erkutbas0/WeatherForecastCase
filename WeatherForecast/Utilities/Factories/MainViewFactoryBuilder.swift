@@ -33,6 +33,16 @@ class MainViewFactoryBuilder: MainViewFactoryBuilderInterface {
         }
         
     }
+
+    func removeCityFromData(cityId: Int64, data: inout Array<CityWeatherInfoViewComponentData>) {
+        data = data.filter({ (item) -> Bool in
+            if item.itemId == cityId {
+                return false
+            } else {
+                return true
+            }
+        })
+    }
     
     func returnGroupWeatherQueryData(data: Array<RegisteredCityList>) -> String {
         let result = data.map { (entity) -> String in

@@ -8,11 +8,11 @@
 import Foundation
 
 class ServerResponse: Codable, Error {
-    let returnMessage: String?
-    let returnCode: Int?
+    let cod: String?
+    let message: String?
 
-    init(returnMessage: String? = nil, returnCode: Int? = nil) {
-        self.returnMessage = returnMessage
-        self.returnCode = returnCode
+    init(cod: String? = nil, message: String? = nil) {
+        self.cod = cod
+        self.message = message
     }
 }

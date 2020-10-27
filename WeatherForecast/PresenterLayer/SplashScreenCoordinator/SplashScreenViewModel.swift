@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 
 class SplashScreenViewModel: BaseViewModelDelegate {
+    var errorPublisher: PublishSubject<CustomAlertData>?
     var dismissInformer: PublishSubject<Void>?
 
     private var splashFinalize = BehaviorRelay<Bool>(value: false)

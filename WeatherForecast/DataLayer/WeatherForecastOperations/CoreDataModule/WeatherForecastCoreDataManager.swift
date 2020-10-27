@@ -35,6 +35,12 @@ class WeatherForecastCoreDataManager: WeatherForecastCoreDataManagerInterface {
         return coreDataManager.fetch(RegisteredCityList.self)
     }
     
+    func removeFromCoreData(id: Int64) {
+        guard let object = coreDataManager.fetchWithPredicate(RegisteredCityList.self, predicateKey: "cityId = %@", predicateValue: "\(id)") else { return }
+        coreDataManager.delete(object)
+        coreDataManager.saveContext()
+    }
+    
     private func checkCityExist(cityId: Int64) -> Bool {
         cityList.contains { (item) -> Bool in
             if item.cityId == cityId {

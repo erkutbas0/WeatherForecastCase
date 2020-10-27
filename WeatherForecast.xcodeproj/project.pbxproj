@@ -252,6 +252,8 @@
 		A73C332425464E6100B0DD17 /* TitleInfoViewComponenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C332325464E6100B0DD17 /* TitleInfoViewComponenData.swift */; };
 		A73C332A25464F3F00B0DD17 /* TempratureViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C332925464F3F00B0DD17 /* TempratureViewComponent.swift */; };
 		A73C333225464F4600B0DD17 /* TempratureViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C333125464F4600B0DD17 /* TempratureViewComponentData.swift */; };
+		A7738572254878F400F679D4 /* TextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7738571254878F400F679D4 /* TextFieldContainer.swift */; };
+		A773857A2548796000F679D4 /* TextFieldContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77385792548796000F679D4 /* TextFieldContainerData.swift */; };
 		A79C370B2546EA53006D732A /* CitySearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C370A2546EA53006D732A /* CitySearchCoordinator.swift */; };
 		A79C37102546EA5D006D732A /* CitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C370F2546EA5D006D732A /* CitySearchViewModel.swift */; };
 		A79C37152546EA69006D732A /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37142546EA69006D732A /* CitySearchViewController.swift */; };
@@ -299,6 +301,7 @@
 		A79C381D2547A588006D732A /* CustomImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C381B2547A588006D732A /* CustomImageViewComponent.swift */; };
 		A79C38222547B63C006D732A /* CustomImageViewComponentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */; };
 		A79C38282547C5FA006D732A /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38272547C5FA006D732A /* DateFormatterManager.swift */; };
+		A7AE08FA254896FA0056F40B /* CustomAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE08F9254896FA0056F40B /* CustomAlertData.swift */; };
 		A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */; };
 		A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC032544BBA500683BB3 /* ViewController.swift */; };
 		A7C9BC0A2544BBA500683BB3 /* WeatherForeCast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC082544BBA500683BB3 /* WeatherForeCast.xcdatamodeld */; };
@@ -500,6 +503,8 @@
 		A73C332325464E6100B0DD17 /* TitleInfoViewComponenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoViewComponenData.swift; sourceTree = "<group>"; };
 		A73C332925464F3F00B0DD17 /* TempratureViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureViewComponent.swift; sourceTree = "<group>"; };
 		A73C333125464F4600B0DD17 /* TempratureViewComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureViewComponentData.swift; sourceTree = "<group>"; };
+		A7738571254878F400F679D4 /* TextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainer.swift; sourceTree = "<group>"; };
+		A77385792548796000F679D4 /* TextFieldContainerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerData.swift; sourceTree = "<group>"; };
 		A79C370A2546EA53006D732A /* CitySearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchCoordinator.swift; sourceTree = "<group>"; };
 		A79C370F2546EA5D006D732A /* CitySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewModel.swift; sourceTree = "<group>"; };
 		A79C37142546EA69006D732A /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +554,7 @@
 		A79C381B2547A588006D732A /* CustomImageViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponent.swift; sourceTree = "<group>"; };
 		A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentContainer.swift; sourceTree = "<group>"; };
 		A79C38272547C5FA006D732A /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		A7AE08F9254896FA0056F40B /* CustomAlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertData.swift; sourceTree = "<group>"; };
 		A7C9BBFC2544BBA500683BB3 /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C9BC032544BBA500683BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -805,6 +811,7 @@
 				A70FA56B254567180017FE92 /* BaseRequest.swift */,
 				A70FA56C254567180017FE92 /* BaseResponse.swift */,
 				A70FA56D254567180017FE92 /* BaseResponseProtocol.swift */,
+				A7AE08F9254896FA0056F40B /* CustomAlertData.swift */,
 			);
 			path = BaseModels;
 			sourceTree = "<group>";
@@ -1081,6 +1088,15 @@
 			path = TitleInfoViewComponent;
 			sourceTree = "<group>";
 		};
+		A7738570254878E100F679D4 /* TextFieldContainerComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A7738571254878F400F679D4 /* TextFieldContainer.swift */,
+				A77385792548796000F679D4 /* TextFieldContainerData.swift */,
+			);
+			path = TextFieldContainerComponents;
+			sourceTree = "<group>";
+		};
 		A79C37092546E9EF006D732A /* CitySearchCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,6 +1269,7 @@
 		A7F347362545EDFF003DE7DC /* UserIntefaceComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A7738570254878E100F679D4 /* TextFieldContainerComponents */,
 				A79C38192547A588006D732A /* CustomImageViewComponent */,
 				A79C37942547546C006D732A /* DailyForecastDetailViewComponents */,
 				A79C377C25474E13006D732A /* LoadingViewComponent */,
@@ -1745,6 +1762,7 @@
 				A7FD4F212546BAA000A07FD3 /* ApiServiceAssembly.swift in Sources */,
 				A70FA59F254567180017FE92 /* ErrorResponse.swift in Sources */,
 				A70FA5F1254567180017FE92 /* Coordinator.swift in Sources */,
+				A773857A2548796000F679D4 /* TextFieldContainerData.swift in Sources */,
 				A79C378625474E2D006D732A /* LoadingViewComponentData.swift in Sources */,
 				A70FA4E62544D37D0017FE92 /* ApiInterceptor.swift in Sources */,
 				A70FA67825456CCF0017FE92 /* ColorSpectrum.swift in Sources */,
@@ -1809,6 +1827,7 @@
 				A7C9BC0A2544BBA500683BB3 /* WeatherForeCast.xcdatamodeld in Sources */,
 				A79C3756254730EF006D732A /* CommonTextField.swift in Sources */,
 				A70FA5DD254567180017FE92 /* InteractivePopGestureDelegate.swift in Sources */,
+				A7738572254878F400F679D4 /* TextFieldContainer.swift in Sources */,
 				A70FA5D1254567180017FE92 /* GenericCollectionViewCell.swift in Sources */,
 				A70FA67025456CCF0017FE92 /* ConstantEndpoints.swift in Sources */,
 				A70FA5A7254567180017FE92 /* StoryBoardIdentifiers.swift in Sources */,
@@ -1845,6 +1864,7 @@
 				A70FA5092545619B0017FE92 /* City.swift in Sources */,
 				A70FA5BD254567180017FE92 /* DynamicLabelProtocol.swift in Sources */,
 				A79C37E3254774F0006D732A /* TempratureDetailComponentData.swift in Sources */,
+				A7AE08FA254896FA0056F40B /* CustomAlertData.swift in Sources */,
 				A70FA516254562810017FE92 /* WeatherDailyList.swift in Sources */,
 				A70FA595254567180017FE92 /* UITableView+Extensions.swift in Sources */,
 				A7F347422545EE2E003DE7DC /* HeaderViewComponentData.swift in Sources */,

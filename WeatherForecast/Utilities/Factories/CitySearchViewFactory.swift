@@ -37,4 +37,9 @@ class CitySearchViewFactory: CitySearchViewFactoryInterface {
         return WeatherDailyForecastRequest(queryCity: textFieldsData.0, dailyCount: textFieldsData.1)
     }
     
+    func returnFilterViewComponentData() -> FilterViewComponentData {
+        return FilterViewComponentData()
+    }
+    
+    
 }

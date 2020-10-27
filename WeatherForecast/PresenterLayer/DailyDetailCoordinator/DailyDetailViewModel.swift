@@ -11,6 +11,7 @@ import RxSwift
 
 class DailyDetailViewModel: BaseViewModelDelegate {
 
+    var errorPublisher: PublishSubject<CustomAlertData>?
     var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
     
     public var factory: DetailViewFactoryInterface!

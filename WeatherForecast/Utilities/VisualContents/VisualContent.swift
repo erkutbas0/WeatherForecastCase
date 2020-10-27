@@ -18,6 +18,7 @@ public enum VisualContents: GenericValueProtocol {
     case rain
     case snow
     case thunderstorm
+    case delete
     
     typealias Value = UIImage
     
@@ -39,6 +40,8 @@ public enum VisualContents: GenericValueProtocol {
             return UIImage(imageLiteralResourceName: "snow")
         case .thunderstorm:
             return UIImage(imageLiteralResourceName: "thunderstorm")
+        case .delete:
+            return UIImage(imageLiteralResourceName: "delete")
         }
     }
     

@@ -20,30 +20,23 @@ class FilterViewComponent: GenericBaseView<FilterViewComponentData> {
         return temp
     }()
     
-    private lazy var cityText: UITextField = {
-        let temp = UITextField()
+    private lazy var cityText: TextFieldContainer = {
+        let temp = TextFieldContainer()
         temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.isUserInteractionEnabled = true
-        temp.placeholder = CitySearchViewLocalizables.cityPlaceHolder.value
-        temp.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        temp.font = SourceSansPro.SemiBold(16).value
-        temp.textColor = ColorSpectrum.darkTheme
-        temp.backgroundColor = ColorSpectrum.defaultWhite
-        temp.layer.cornerRadius = 10
-        temp.placeholderRect(forBounds: CGRect(x: 50, y: 0, width: 0, height: 0))
         return temp
     }()
     
-    private lazy var dailyCount: UITextField = {
-        let temp = UITextField()
+    private lazy var dailyCount: TextFieldContainer = {
+        let temp = TextFieldContainer()
         temp.translatesAutoresizingMaskIntoConstraints = false
-//        temp.isEnabled = false
-        temp.placeholder = CitySearchViewLocalizables.dailyCountPlaceHolder.value
-        temp.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        temp.font = SourceSansPro.SemiBold(16).value
-        temp.textColor = ColorSpectrum.darkTheme
-        temp.backgroundColor = ColorSpectrum.defaultWhite
-        temp.layer.cornerRadius = 10
+        temp.textField.inputView = pickerView
+        return temp
+    }()
+    
+    lazy var pickerView: UIPickerView = {
+        let temp = UIPickerView()
+        temp.delegate = self
+        temp.dataSource = self
         return temp
     }()
     
@@ -74,11 +67,34 @@ class FilterViewComponent: GenericBaseView<FilterViewComponentData> {
     
     private func setViewData() {
         guard let data = returnData() else { return }
+        cityText.setData(data: data.cityTextData)
+        dailyCount.setData(data: data.dailyCountData)
     }
     
     func getTextValues() -> (String, Int) {
-        guard let count = dailyCount.text else { return ("istanbul", 16)}
-        return (cityText.text ?? "istanbul", Int(count) ?? 16)
+        guard let count = dailyCount.textField.text else { return ("istanbul", 16)}
+        return (cityText.textField.text ?? "istanbul", Int(count) ?? 16)
+    }
+    
+}
+
+// Mark: - UIPickerViewDelegate -
+extension FilterViewComponent: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        guard let data = returnData() else { return 16 }
+        return data.pickerCount
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row + 1)"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        dailyCount.textField.text = "\(row + 1)"
     }
     
 }

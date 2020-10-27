@@ -8,11 +8,13 @@
 import UIKit
 
 typealias SelectedCityCompletion = (Int64) -> Void
+typealias RemovedCityCompletion = (Int64) -> Void
 
 class CityListViewComponent: GenericBaseView<CityListViewComponentData> {
     
     private weak var delegate: CityListViewComponentDelegate?
     private var selectedCity: SelectedCityCompletion?
+    private var removedCity: RemovedCityCompletion?
     
     private lazy var cityListTableView: UITableView = {
         let temp = UITableView()
@@ -20,6 +22,7 @@ class CityListViewComponent: GenericBaseView<CityListViewComponentData> {
         temp.separatorStyle = .none
         temp.delegate = self
         temp.dataSource = self
+        temp.rowHeight = 110
         temp.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         temp.setContentOffset(CGPoint(x: 0, y: -20), animated: false)
         temp.genericRegister(CityWeatherInfoCell.self)
@@ -47,12 +50,20 @@ class CityListViewComponent: GenericBaseView<CityListViewComponentData> {
     }
     
     private func listenSelectedRow(_ data: GenericRowDataProtocol) {
-        print("data : \(data.itemId)")
         selectedCity?(data.itemId)
+    }
+    
+    private func setRemovedCity(_ data: GenericRowDataProtocol?) {
+        guard let data = data else { return }
+        removedCity?(data.itemId)
     }
     
     func subscribeSelectedCity(completion: @escaping SelectedCityCompletion) {
         selectedCity = completion
+    }
+    
+    func subscribeRemovedCity(completion: @escaping RemovedCityCompletion) {
+        removedCity = completion
     }
     
     func setDelegate(_ delegate: CityListViewComponentDelegate) {
@@ -90,13 +101,18 @@ extension CityListViewComponent: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? CityWeatherInfoCell else { return }
         cell.subscribeToSelectedRow(completion: listenSelectedRow(_:))
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? CityWeatherInfoCell else { return }
+        
+        if editingStyle == .delete {
+            setRemovedCity(cell.returnGenericRowData())
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     

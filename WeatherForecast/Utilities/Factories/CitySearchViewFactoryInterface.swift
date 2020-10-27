@@ -11,4 +11,5 @@ protocol CitySearchViewFactoryInterface {
     func returnHeaderViewComponentData() -> HeaderViewComponentData
     func returnActionButtonViewComponentData() -> ActionButtonViewComponentData
     func returnWeatherDailyForecastRequest(textFieldsData: (String, Int)) -> WeatherDailyForecastRequest
+    func returnFilterViewComponentData() -> FilterViewComponentData
 }

@@ -13,14 +13,19 @@ typealias FireDailyForecastCompletion = (String) -> Void
 
 class MainViewModel: BaseViewModelDelegate {
     
+    // Mark: - Observers -
     private let disposeBag = DisposeBag()
 
     var dismissInformer: PublishSubject<Void>?
+    var errorPublisher: PublishSubject<CustomAlertData>?
+    
     private var dataState = PublishSubject<DataLoadingState>()
+    private var detailForecastPublisher = PublishSubject<WeatherDailyForecastResponse>()
     
     private let fireCitySearh = PublishSubject<Void>()
     private let fireDailyForecast = PublishSubject<String>()
     
+    // Mark: - ViewModel Properties -
     public var factory: MainViewFactoryBuilderInterface!
     private var observerManager: MainCoordinatorObserverManager!
     private var coreDataOperator: WeatherForecastCoreDataManagerInterface!
@@ -72,10 +77,9 @@ class MainViewModel: BaseViewModelDelegate {
     private lazy var dailyCallBackListener: (Result<WeatherDailyForecastResponse, ErrorResponse>) -> Void = { [weak self] result in
         switch result {
         case .failure(let error):
-            print("error \(error)")
+            self?.errorPublisher?.onNext(CustomAlertData(message: error.serverResponse?.message))
         case .success(let data):
-            print("data : \(data)")
-            
+            self?.detailForecastPublisher.onNext(data)
         }
     }
     
@@ -87,11 +91,14 @@ class MainViewModel: BaseViewModelDelegate {
     private lazy var callBackListener: (Result<WeatherGroupForecastResponse, ErrorResponse>) -> Void = { [weak self] result in
         switch result {
         case .failure(let error):
-            print("error \(error)")
+            self?.errorPublisher?.onNext(CustomAlertData(message: error.serverResponse?.message))
         case .success(let data):
-            print("data : \(data)")
             self?.data = self?.factory.returnCityWeatherInfoViewComponentData(data: data)
         }
+    }
+    
+    func subscribeDetailForecastPublisher(completion: @escaping (WeatherDailyForecastResponse) -> Void) -> Disposable {
+        return detailForecastPublisher.subscribe(onNext: completion)
     }
     
     func subscribeDataLoadingProcess(completion: @escaping DataLoadingStateCompletion) -> Disposable {
@@ -100,6 +107,13 @@ class MainViewModel: BaseViewModelDelegate {
     
     private func setDataLoadingState(with value: DataLoadingState) {
         dataState.onNext(value)
+    }
+    
+    func removeCity(with id: Int64) {
+        if data != nil {
+            factory.removeCityFromData(cityId: id, data: &data!)
+            coreDataOperator.removeFromCoreData(id: id)
+        }
     }
     
     // Mark: - CitySearch Process Flow Methods -

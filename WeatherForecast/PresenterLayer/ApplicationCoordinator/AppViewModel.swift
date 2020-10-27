@@ -10,6 +10,7 @@ import RxSwift
 
 class AppViewModel: BaseViewModelDelegate {
     
+    var errorPublisher: PublishSubject<CustomAlertData>?
     var dismissInformer: PublishSubject<Void>?
     
     deinit {

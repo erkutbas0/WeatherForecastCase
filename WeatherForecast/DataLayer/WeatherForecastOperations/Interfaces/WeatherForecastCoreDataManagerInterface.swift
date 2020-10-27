@@ -10,4 +10,5 @@ import Foundation
 protocol WeatherForecastCoreDataManagerInterface {
     func saveToCoreData(id: Int64, name: String)
     func getRegisteredCityList() -> Array<RegisteredCityList>
+    func removeFromCoreData(id: Int64)
 }

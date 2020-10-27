@@ -19,3 +19,15 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+// Mark: - AlertView Extensions -
+extension UIViewController {
+    
+    func fireCustomAlert(data: CustomAlertData, completion: (() -> Void)?) {
+        let alert = UIAlertController(title: data.title, message: data.message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: WarningLocalizables.warningTitle.value, style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+}

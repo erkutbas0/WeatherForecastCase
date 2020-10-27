@@ -48,6 +48,10 @@ class CityWeatherInfoViewComponent: GenericBaseView<GenericRowDataProtocol> {
         return temp
     }()
     
+    override func setupViews() {
+        super.setupViews()
+    }
+    
     override func addMajorFields() {
         super.addMajorFields()
         addUserInterfaceComponents()
@@ -61,7 +65,7 @@ class CityWeatherInfoViewComponent: GenericBaseView<GenericRowDataProtocol> {
         containerView.addSubview(degreeValue)
 
         NSLayoutConstraint.activate([
-        
+            
             shadowContainerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             shadowContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             shadowContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -99,3 +103,4 @@ class CityWeatherInfoViewComponent: GenericBaseView<GenericRowDataProtocol> {
     }
 
 }
+

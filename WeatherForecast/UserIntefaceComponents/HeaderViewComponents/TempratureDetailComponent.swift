@@ -16,6 +16,7 @@ class TempratureDetailComponent: GenericBaseView<TempratureDetailComponentData> 
         temp.alignment = .fill
         temp.distribution = .fill
         temp.axis = .horizontal
+        temp.spacing = 10
         return temp
     }()
     

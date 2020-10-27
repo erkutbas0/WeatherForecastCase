@@ -21,5 +21,6 @@ class ManagerAssembly: Assembly {
         container.autoregister(ApiEventMonitor.self, initializer: ApiEventMonitor.init).inObjectScope(.container)
         container.autoregister(HttpClientInterface.self, initializer: ApiManager.init).inObjectScope(.container)
         container.autoregister(ImageCacheManager.self, initializer: ImageCacheManager.init).inObjectScope(.container)
+        container.autoregister(ImageCacheManager.self, initializer: ImageCacheManager.init).inObjectScope(.container)
     }
 }

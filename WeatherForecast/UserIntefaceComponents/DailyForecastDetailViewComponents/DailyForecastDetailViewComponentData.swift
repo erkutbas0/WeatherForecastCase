@@ -10,7 +10,7 @@ import UIKit
 class DailyForecastDetailViewComponentData {
     
     private(set) var headerViewData: DetailHeaderViewComponentData
-    private(set) var headerHeight: CGFloat = 300
+    private(set) var headerHeight: CGFloat = 340
     
     init(headerViewData: DetailHeaderViewComponentData) {
         self.headerViewData = headerViewData

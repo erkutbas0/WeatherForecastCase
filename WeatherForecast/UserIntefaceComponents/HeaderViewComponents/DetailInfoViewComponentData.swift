@@ -11,14 +11,10 @@ class DetailInfoViewComponentData {
     
     private(set) var cityName: BasicAttributedLabelData
     private(set) var weatherMainInfo: BasicAttributedLabelData
-    private(set) var degreeInfo: TempratureViewComponentData
-    private(set) var tempDetail: TempratureDetailComponentData
     
-    init(cityName: BasicAttributedLabelData, weatherMainInfo: BasicAttributedLabelData, degreeInfo: TempratureViewComponentData, tempDetail: TempratureDetailComponentData) {
+    init(cityName: BasicAttributedLabelData, weatherMainInfo: BasicAttributedLabelData) {
         self.cityName = cityName
         self.weatherMainInfo = weatherMainInfo
-        self.degreeInfo = degreeInfo
-        self.tempDetail = tempDetail
     }
     
     

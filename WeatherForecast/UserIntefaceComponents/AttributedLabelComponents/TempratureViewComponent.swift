@@ -5,7 +5,7 @@
 //  Created by Erkut Bas on 26.10.2020.
 //
 
-import Foundation
+import UIKit
 
 class TempratureViewComponent: BaseDynamicAttributedLabel<TempratureViewComponentData> {
     
@@ -15,7 +15,10 @@ class TempratureViewComponent: BaseDynamicAttributedLabel<TempratureViewComponen
         guard let data = returnData() else { return }
         guard let text = data.value, let font = data.textFont[0] else { return }
         
-        attributedText = NSMutableAttributedString(string: "\(text)°", attributes: [.font : font, .foregroundColor: data.textColor[0]])
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = data.textAlignment
+        
+        attributedText = NSMutableAttributedString(string: "\(Int(text))°", attributes: [.font : font, .foregroundColor: data.textColor[0], .paragraphStyle: paragraphStyle])
     }
     
 }

@@ -7,6 +7,14 @@
 
 import Foundation
 
-class DailyForecastDetailViewCell: BaseTableViewCell {
+class DailyForecastDetailViewCell: GenericTableViewCell<GenericDataProtocol, DailyInfoView> {
+    
+    override func setupView() {
+        super.setupView()
+        
+        selectionStyle = .none
+        
+        
+    }
     
 }

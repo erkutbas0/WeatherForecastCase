@@ -11,19 +11,23 @@ class DetailHeaderViewComponent: GenericBaseView<DetailHeaderViewComponentData> 
     
     private var leftIcon: ImageContainer!
     private var headerMiddleInfo: DetailInfoViewComponent!
+    var headerBottomInfo: DetailDegreeInfoComponent!
+    
+    override func setupViews() {
+        super.setupViews()
+        backgroundColor = ColorSpectrum.defaultWhite
+    }
     
     override func addMajorFields() {
         super.addMajorFields()
         
-        backgroundColor = .red
         addDetailInfoViewComponent()
+        addDetailDegreeInfoComponent()
     }
     
     override func loadDataToView() {
         super.loadDataToView()
-        
         setLeftIconData()
-        
     }
     
     private func setLeftIconData() {
@@ -35,7 +39,7 @@ class DetailHeaderViewComponent: GenericBaseView<DetailHeaderViewComponentData> 
         
         NSLayoutConstraint.activate([
         
-            leftIcon.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            leftIcon.topAnchor.constraint(equalTo: topAnchor, constant: 40),
             leftIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
         
         ])
@@ -60,6 +64,21 @@ class DetailHeaderViewComponent: GenericBaseView<DetailHeaderViewComponentData> 
             
         ])
         
+    }
+    
+    private func addDetailDegreeInfoComponent() {
+        guard let data = returnData() else { return }
+        headerBottomInfo = DetailDegreeInfoComponent(data: data.bottomInfo)
+        headerBottomInfo.translatesAutoresizingMaskIntoConstraints = false
+         
+        addSubview(headerBottomInfo)
+        
+        NSLayoutConstraint.activate([
+        
+            headerBottomInfo.topAnchor.constraint(equalTo: headerMiddleInfo.bottomAnchor),
+            headerBottomInfo.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+        ])
         
     }
     

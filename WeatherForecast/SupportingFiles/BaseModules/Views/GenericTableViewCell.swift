@@ -22,10 +22,10 @@ class GenericTableViewCell<DataType, ViewType: GenericBaseView<DataType>>: BaseT
         
         NSLayoutConstraint.activate([
         
-            genericView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            genericView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            genericView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            genericView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            genericView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            genericView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            genericView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            genericView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         
         
         ])

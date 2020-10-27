@@ -1,5 +1,5 @@
 //
-//  DetailInfoViewComponent.swift
+//  DetailDegreeInfoComponent.swift
 //  WeatherForecast
 //
 //  Created by Erkut Bas on 27.10.2020.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DetailInfoViewComponent: GenericBaseView<DetailInfoViewComponentData> {
+class DetailDegreeInfoComponent: GenericBaseView<DetailDegreeInfoComponentData> {
     
     private lazy var mainStackView: UIStackView = {
-        let temp = UIStackView(arrangedSubviews: [cityName, weatherMainInfo])
+        let temp = UIStackView(arrangedSubviews: [degreeInfo, degreeDetailInfo])
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.isUserInteractionEnabled = true
         temp.alignment = .fill
@@ -19,14 +19,15 @@ class DetailInfoViewComponent: GenericBaseView<DetailInfoViewComponentData> {
         return temp
     }()
     
-    private lazy var cityName: BasicAttributedLabel = {
-        let temp = BasicAttributedLabel()
+    private lazy var degreeInfo: TempratureViewComponent = {
+        let temp = TempratureViewComponent()
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.isUserInteractionEnabled = false
         return temp
     }()
     
-    private lazy var weatherMainInfo: BasicAttributedLabel = {
-        let temp = BasicAttributedLabel()
+    private lazy var degreeDetailInfo: TempratureDetailComponent = {
+        let temp = TempratureDetailComponent()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.isUserInteractionEnabled = false
         return temp
@@ -60,8 +61,19 @@ class DetailInfoViewComponent: GenericBaseView<DetailInfoViewComponentData> {
     private func setViewData() {
         guard let data = returnData() else { return }
         
-        cityName.setLabelData(data: data.cityName)
-        weatherMainInfo.setLabelData(data: data.weatherMainInfo)
+        degreeInfo.setLabelData(data: data.degreeInfo)
+        degreeDetailInfo.setData(data: data.tempDetail)
+    }
+    
+    func partActivationManager(active: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve) {
+                self.degreeInfo.alpha = active ? 1 : 0
+                self.degreeDetailInfo.alpha = active ? 1 : 0
+            }
+
+        }
     }
     
 }

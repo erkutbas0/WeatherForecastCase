@@ -291,6 +291,14 @@
 		A79C37E825477569006D732A /* TempratureDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37E725477569006D732A /* TempratureDetailLabel.swift */; };
 		A79C37ED25477570006D732A /* TempratureDetailLabelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C37EC25477570006D732A /* TempratureDetailLabelData.swift */; };
 		A79C380125477F8E006D732A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C380025477F8E006D732A /* UIViewController+Extension.swift */; };
+		A79C380625479EFC006D732A /* DetailDegreeInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C380525479EFC006D732A /* DetailDegreeInfoComponent.swift */; };
+		A79C380B25479F06006D732A /* DetailDegreeInfoComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C380A25479F06006D732A /* DetailDegreeInfoComponentData.swift */; };
+		A79C38102547A23B006D732A /* DailyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C380F2547A23B006D732A /* DailyInfoView.swift */; };
+		A79C38152547A25E006D732A /* DailyInfoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38142547A25E006D732A /* DailyInfoViewData.swift */; };
+		A79C381C2547A588006D732A /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C381A2547A588006D732A /* CustomImageViewComponentData.swift */; };
+		A79C381D2547A588006D732A /* CustomImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C381B2547A588006D732A /* CustomImageViewComponent.swift */; };
+		A79C38222547B63C006D732A /* CustomImageViewComponentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */; };
+		A79C38282547C5FA006D732A /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38272547C5FA006D732A /* DateFormatterManager.swift */; };
 		A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */; };
 		A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC032544BBA500683BB3 /* ViewController.swift */; };
 		A7C9BC0A2544BBA500683BB3 /* WeatherForeCast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC082544BBA500683BB3 /* WeatherForeCast.xcdatamodeld */; };
@@ -530,6 +538,14 @@
 		A79C37E725477569006D732A /* TempratureDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailLabel.swift; sourceTree = "<group>"; };
 		A79C37EC25477570006D732A /* TempratureDetailLabelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureDetailLabelData.swift; sourceTree = "<group>"; };
 		A79C380025477F8E006D732A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A79C380525479EFC006D732A /* DetailDegreeInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDegreeInfoComponent.swift; sourceTree = "<group>"; };
+		A79C380A25479F06006D732A /* DetailDegreeInfoComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDegreeInfoComponentData.swift; sourceTree = "<group>"; };
+		A79C380F2547A23B006D732A /* DailyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInfoView.swift; sourceTree = "<group>"; };
+		A79C38142547A25E006D732A /* DailyInfoViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInfoViewData.swift; sourceTree = "<group>"; };
+		A79C381A2547A588006D732A /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
+		A79C381B2547A588006D732A /* CustomImageViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponent.swift; sourceTree = "<group>"; };
+		A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentContainer.swift; sourceTree = "<group>"; };
+		A79C38272547C5FA006D732A /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		A7C9BBFC2544BBA500683BB3 /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C9BC032544BBA500683BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -847,6 +863,7 @@
 		A70FA63125456CCF0017FE92 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A79C38262547C5E8006D732A /* Formatters */,
 				A79C371F25471BCD006D732A /* Factories */,
 				A70FA63225456CCF0017FE92 /* PropertyWrappers */,
 				A70FA63525456CCF0017FE92 /* Constants */,
@@ -1121,6 +1138,8 @@
 				A79C379D254754A3006D732A /* DailyForecastDetailViewComponentData.swift */,
 				A79C37A2254754B8006D732A /* DailyForecastDetailViewComponentDelegate.swift */,
 				A79C37A725475812006D732A /* DailyForecastDetailViewCell.swift */,
+				A79C380F2547A23B006D732A /* DailyInfoView.swift */,
+				A79C38142547A25E006D732A /* DailyInfoViewData.swift */,
 			);
 			path = DailyForecastDetailViewComponents;
 			sourceTree = "<group>";
@@ -1133,6 +1152,24 @@
 				A79C37B7254759DA006D732A /* DailyDetailViewController.swift */,
 			);
 			path = DailyDetailCoordinator;
+			sourceTree = "<group>";
+		};
+		A79C38192547A588006D732A /* CustomImageViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A79C381A2547A588006D732A /* CustomImageViewComponentData.swift */,
+				A79C381B2547A588006D732A /* CustomImageViewComponent.swift */,
+				A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */,
+			);
+			path = CustomImageViewComponent;
+			sourceTree = "<group>";
+		};
+		A79C38262547C5E8006D732A /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				A79C38272547C5FA006D732A /* DateFormatterManager.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		A7C9BBF32544BBA500683BB3 = {
@@ -1200,6 +1237,7 @@
 		A7F347362545EDFF003DE7DC /* UserIntefaceComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A79C38192547A588006D732A /* CustomImageViewComponent */,
 				A79C37942547546C006D732A /* DailyForecastDetailViewComponents */,
 				A79C377C25474E13006D732A /* LoadingViewComponent */,
 				A79C375A254733EB006D732A /* ActionButtonViewComponent */,
@@ -1224,6 +1262,8 @@
 				A79C37D825477460006D732A /* DetailInfoViewComponentData.swift */,
 				A79C37DD254774DA006D732A /* TempratureDetailComponent.swift */,
 				A79C37E2254774F0006D732A /* TempratureDetailComponentData.swift */,
+				A79C380525479EFC006D732A /* DetailDegreeInfoComponent.swift */,
+				A79C380A25479F06006D732A /* DetailDegreeInfoComponentData.swift */,
 			);
 			path = HeaderViewComponents;
 			sourceTree = "<group>";
@@ -1669,6 +1709,7 @@
 				A70FA67425456CCF0017FE92 /* ConstantKeyStrings.swift in Sources */,
 				A7FD4F072546B62800A07FD3 /* WeatherForecastApiService.swift in Sources */,
 				A73C33192546452000B0DD17 /* CityWeatherInfoViewComponentData.swift in Sources */,
+				A79C38102547A23B006D732A /* DailyInfoView.swift in Sources */,
 				A79C371B2546ED7C006D732A /* MainRouter.swift in Sources */,
 				A70FA58D254567180017FE92 /* UIView+Extension.swift in Sources */,
 				A79C376E25473F77006D732A /* WeatherDailyForecastRequest.swift in Sources */,
@@ -1677,6 +1718,7 @@
 				A79C37AE254759C4006D732A /* DailyDetailCoordinator.swift in Sources */,
 				A70FA5CD254567180017FE92 /* BaseTableViewCell.swift in Sources */,
 				A7F347752545FF05003DE7DC /* BasicAttributedLabelData.swift in Sources */,
+				A79C38222547B63C006D732A /* CustomImageViewComponentContainer.swift in Sources */,
 				A79C37C225476E21006D732A /* DetailViewFactoryInterface.swift in Sources */,
 				A70FA58F254567180017FE92 /* Encodable+Extension.swift in Sources */,
 				A70FA5C3254567180017FE92 /* BaseResponse.swift in Sources */,
@@ -1706,9 +1748,11 @@
 				A70FA4E42544D37D0017FE92 /* HttpClientInterface.swift in Sources */,
 				A73C32D42546311500B0DD17 /* UseCaseAssembly.swift in Sources */,
 				A70FA4E82544D37D0017FE92 /* ApiAdapter.swift in Sources */,
+				A79C381D2547A588006D732A /* CustomImageViewComponent.swift in Sources */,
 				A70FA5B1254567180017FE92 /* BaseUseCase.swift in Sources */,
 				A70FA5CF254567180017FE92 /* BaseCollectionViewCell.swift in Sources */,
 				A7FD4E762546A99300A07FD3 /* SysInfo.swift in Sources */,
+				A79C380B25479F06006D732A /* DetailDegreeInfoComponentData.swift in Sources */,
 				A7FD4F112546B72B00A07FD3 /* WeatherForecastRepository.swift in Sources */,
 				A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */,
 				A70FA5CB254567180017FE92 /* BaseViewController.swift in Sources */,
@@ -1774,6 +1818,7 @@
 				A70FA6A625456CCF0017FE92 /* FontManager.swift in Sources */,
 				A79C37BD25476DF9006D732A /* DetailViewFactory.swift in Sources */,
 				A79C3773254742F1006D732A /* WeatherDailyForecastServiceModule.swift in Sources */,
+				A79C381C2547A588006D732A /* CustomImageViewComponentData.swift in Sources */,
 				A70FA5E3254567180017FE92 /* GenericDataProtocol.swift in Sources */,
 				A73C32BD254629CC00B0DD17 /* SplashScreenViewController.swift in Sources */,
 				A70FA5AB254567180017FE92 /* AnimationStates.swift in Sources */,
@@ -1795,6 +1840,7 @@
 				A70FA5B5254567180017FE92 /* SingleUseCase.swift in Sources */,
 				A79C37D925477460006D732A /* DetailInfoViewComponentData.swift in Sources */,
 				A70FA5BF254567180017FE92 /* DataModel.swift in Sources */,
+				A79C38282547C5FA006D732A /* DateFormatterManager.swift in Sources */,
 				A79C372625471C27006D732A /* MainViewFactoryBuilderInterface.swift in Sources */,
 				A79C37902547526C006D732A /* DetailHeaderViewComponentData.swift in Sources */,
 				A70FA5042545572D0017FE92 /* WeatherDailyForecastResponse.swift in Sources */,
@@ -1816,6 +1862,7 @@
 				A70FA593254567180017FE92 /* UserDefaults+Extension.swift in Sources */,
 				A70FA5B7254567180017FE92 /* DynamicLabelData.swift in Sources */,
 				A79C37A3254754B8006D732A /* DailyForecastDetailViewComponentDelegate.swift in Sources */,
+				A79C38152547A25E006D732A /* DailyInfoViewData.swift in Sources */,
 				A73C32E9254634A600B0DD17 /* MainViewController.swift in Sources */,
 				A7FD4E712546A95000A07FD3 /* CityWeatherMainData.swift in Sources */,
 				A79C374C254729FA006D732A /* FilterViewComponent.swift in Sources */,
@@ -1827,6 +1874,7 @@
 				A79C37152546EA69006D732A /* CitySearchViewController.swift in Sources */,
 				A70FA5A9254567180017FE92 /* DataLoadingState.swift in Sources */,
 				A79C374625472161006D732A /* FactoryAssembly.swift in Sources */,
+				A79C380625479EFC006D732A /* DetailDegreeInfoComponent.swift in Sources */,
 				A70FA5E7254567180017FE92 /* AwakingStoryBoardDelegate.swift in Sources */,
 				A7FD4E992546AE0100A07FD3 /* WeatherGroupForecastCallBack.swift in Sources */,
 				A73C332A25464F3F00B0DD17 /* TempratureViewComponent.swift in Sources */,

@@ -9,4 +9,5 @@ import Foundation
 
 protocol DetailViewFactoryInterface {
     func returnDailyForecastDetailViewComponentData(response: WeatherDailyForecastResponse) -> DailyForecastDetailViewComponentData?
+    func returnDailyInfoViewData(data: WeatherDailyList, timeZone: Int) -> DailyInfoViewData?
 }

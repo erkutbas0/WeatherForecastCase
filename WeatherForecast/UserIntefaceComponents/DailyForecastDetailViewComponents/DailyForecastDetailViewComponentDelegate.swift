@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol DailyForecastDetailViewComponentDelegate {
+protocol DailyForecastDetailViewComponentDelegate: AnyObject {
     func numberOfSection() -> Int
     func numberOfItems(in section: Int) -> Int
-    func getItemData(at index: Int) -> GenericDataProtocol
+    func getItemData(at index: Int) -> GenericDataProtocol?
 }

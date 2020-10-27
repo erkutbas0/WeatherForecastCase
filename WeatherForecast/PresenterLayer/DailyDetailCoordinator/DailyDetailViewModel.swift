@@ -26,26 +26,20 @@ class DailyDetailViewModel: BaseViewModelDelegate {
         return factory.returnDailyForecastDetailViewComponentData(response: data)
     }
     
-//    private var dailyUsecase: WeatherDailyForecastUseCase!
-//    private var dailyUsecaseCallback = WeatherDailyForecastCallBack()
-//    public var factory: CitySearchViewFactoryInterface!
-//
-//    init(dailyUsecase: WeatherDailyForecastUseCase, factory: CitySearchViewFactoryInterface) {
-//        self.dailyUsecase = dailyUsecase
-//        self.factory = factory
-//    }
-//
-//    func getDailyForecastData(textFieldsData: (String, Int)) {
-//        dailyUsecaseCallback.commonResult { [weak self](result) in
-//            switch result {
-//            case .failure(let error):
-//                print("error : \(error)")
-//            case .success(let data):
-//                print("data : \(data)")
-//            }
-//        }
-//        dailyUsecase.execute(useCaseCallBack: dailyUsecaseCallback, params: factory.returnWeatherDailyForecastRequest(textFieldsData: textFieldsData))
-//    }
+    func returnNumberOfSection() -> Int {
+        return 1
+    }
+    
+    func returnNumberOfItems(in section: Int) -> Int {
+        guard let data = data, let list = data.list else { return 0 }
+        return list.count
+    }
+    
+    func returnDataItem(at index: Int) -> GenericDataProtocol? {
+        guard let data = data, let list = data.list, let item = list.getElement(at: index) else { return nil }
+        return factory.returnDailyInfoViewData(data: item, timeZone: data.city?.timezone ?? 10800)
+    }
+    
     
     deinit {
         print("DEINIT DailyDetailViewModel")

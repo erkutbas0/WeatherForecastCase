@@ -14,6 +14,7 @@ class ManagerAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(NetworkConnectionManager.self, initializer: NetworkConnectionManager.init)
         container.autoregister(CoreDataManager.self, initializer: CoreDataManager.init).inObjectScope(.weak)
+        container.autoregister(WeatherForecastCoreDataManagerInterface.self, initializer: WeatherForecastCoreDataManager.init).inObjectScope(.weak)
         container.autoregister(TutorialManager.self, initializer: TutorialManager.init)
         container.autoregister(RequestRetrier.self, initializer: ApiRetrier.init).inObjectScope(.container)
         container.autoregister(RequestAdapter.self, initializer: ApiAdapter.init).inObjectScope(.container)
@@ -22,5 +23,7 @@ class ManagerAssembly: Assembly {
         container.autoregister(HttpClientInterface.self, initializer: ApiManager.init).inObjectScope(.container)
         container.autoregister(ImageCacheManager.self, initializer: ImageCacheManager.init).inObjectScope(.container)
         container.autoregister(ImageCacheManager.self, initializer: ImageCacheManager.init).inObjectScope(.container)
+        container.autoregister(MainCoordinatorObserverManager.self, initializer: MainCoordinatorObserverManager.init).inObjectScope(.container)
+        
     }
 }

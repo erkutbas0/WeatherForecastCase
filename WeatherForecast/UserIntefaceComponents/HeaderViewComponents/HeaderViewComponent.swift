@@ -80,8 +80,8 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
         
         NSLayoutConstraint.activate([
         
-            leftIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 60),
-            leftIcon.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            leftIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40),
+            leftIcon.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
         
         ])
         

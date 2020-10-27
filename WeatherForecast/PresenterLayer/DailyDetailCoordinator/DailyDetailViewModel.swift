@@ -39,8 +39,7 @@ class DailyDetailViewModel: BaseViewModelDelegate {
         guard let data = data, let list = data.list, let item = list.getElement(at: index) else { return nil }
         return factory.returnDailyInfoViewData(data: item, timeZone: data.city?.timezone ?? 10800)
     }
-    
-    
+
     deinit {
         print("DEINIT DailyDetailViewModel")
     }

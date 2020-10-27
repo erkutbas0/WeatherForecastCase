@@ -10,5 +10,8 @@ import Foundation
 protocol MainViewFactoryBuilderInterface {
     
     func returnHeaderViewComponentData() -> HeaderViewComponentData
+    func returnCityWeatherInfoViewComponentData(data: Array<RegisteredCityList>) -> Array<CityWeatherInfoViewComponentData>?
+    func returnCityWeatherInfoViewComponentData(data: WeatherGroupForecastResponse) -> Array<CityWeatherInfoViewComponentData>?
+    func returnGroupWeatherQueryData(data: Array<RegisteredCityList>) -> String
     
 }

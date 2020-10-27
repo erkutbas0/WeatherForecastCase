@@ -13,10 +13,9 @@ class DailyDetailViewController: BaseViewController<DailyDetailViewModel> {
     
     override func prepareViewControllerConfigurations() {
         super.prepareViewControllerConfigurations()
-
         setupViewProperties()
-        
         addDetailViewComponent()
+        listenCloseAction()
         
     }
     
@@ -41,6 +40,13 @@ class DailyDetailViewController: BaseViewController<DailyDetailViewModel> {
         
         
         ])
+    }
+    
+    func listenCloseAction() {
+        detailViewComponent.headerView.leftIcon.subscribeImageContainerTappedListener { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+            self?.viewModel.dismissCoordinator()
+        }
     }
     
     deinit {

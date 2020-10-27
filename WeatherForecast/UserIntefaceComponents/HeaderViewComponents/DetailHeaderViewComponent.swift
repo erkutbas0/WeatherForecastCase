@@ -9,9 +9,9 @@ import UIKit
 
 class DetailHeaderViewComponent: GenericBaseView<DetailHeaderViewComponentData> {
     
-    private var leftIcon: ImageContainer!
     private var headerMiddleInfo: DetailInfoViewComponent!
     var headerBottomInfo: DetailDegreeInfoComponent!
+    var leftIcon: ImageContainer!
     
     override func setupViews() {
         super.setupViews()
@@ -39,8 +39,8 @@ class DetailHeaderViewComponent: GenericBaseView<DetailHeaderViewComponentData> 
         
         NSLayoutConstraint.activate([
         
-            leftIcon.topAnchor.constraint(equalTo: topAnchor, constant: 40),
-            leftIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            leftIcon.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            leftIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
         
         ])
         

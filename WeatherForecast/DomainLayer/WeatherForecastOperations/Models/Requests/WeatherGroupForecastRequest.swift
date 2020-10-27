@@ -10,6 +10,7 @@ import Foundation
 class WeatherGroupForecastRequest: CodableDataProtocol {
     
     private(set) var cityIds: String
+    private(set) var units: String = "metric"
     private(set) var appId: String = UtilityManager.appId
     
     init(cityIds: String) {
@@ -19,6 +20,7 @@ class WeatherGroupForecastRequest: CodableDataProtocol {
     enum CodingKeys: String, CodingKey {
         case cityIds = "id"
         case appId = "appid"
+        case units
     }
     
 }

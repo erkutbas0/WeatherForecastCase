@@ -16,10 +16,11 @@ class CityWeatherData: Codable {
     let visibility: Int?
     let wind: Wind?
     let clouds: Clouds?
-    let dt, id: Int?
+    let dt: Int?
+    let id: Int64?
     let name: String?
 
-    init(coord: Coordinates?, sys: SysInfo?, weather: [Weather]?, main: CityWeatherMainData?, visibility: Int?, wind: Wind?, clouds: Clouds?, dt: Int?, id: Int?, name: String?) {
+    init(coord: Coordinates?, sys: SysInfo?, weather: [Weather]?, main: CityWeatherMainData?, visibility: Int?, wind: Wind?, clouds: Clouds?, dt: Int?, id: Int64?, name: String?) {
         self.coord = coord
         self.sys = sys
         self.weather = weather

@@ -12,10 +12,12 @@ class DailyDetailCoordinator: BaseCoordinator<DailyDetailViewModel> {
     
     private let disposeBag = DisposeBag()
     
+    private var terminaterPublisher = PublishSubject<Void>()
+    
     override func start() {
         self.viewContoller = DailyDetailViewController(viewModel: viewModel)
         self.viewContoller.modalPresentationStyle = .overFullScreen
-//        subscribeForFurtherCoordinators()
+        subscribeForFurtherCoordinators()
     }
     
     private func subscribeForFurtherCoordinators() {
@@ -26,7 +28,12 @@ class DailyDetailCoordinator: BaseCoordinator<DailyDetailViewModel> {
     }
     
     private func terminateCoordinator() {
+        terminaterPublisher.onNext(())
         parentCoordinator?.didFinish(coordinator: self)
+    }
+    
+    func subscribeTerminaterPublisher(completion: @escaping OnDismissed) -> Disposable {
+        return terminaterPublisher.subscribe(onNext: completion)
     }
     
     deinit {

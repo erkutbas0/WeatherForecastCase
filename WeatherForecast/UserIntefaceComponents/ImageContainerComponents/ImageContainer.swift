@@ -13,6 +13,12 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
     
     private var imageTapped: ImageTappedCompletion?
     
+    lazy var containerView: UIView = {
+        let temp = UIView()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
     lazy var imageView: UIImageView = {
         let temp = UIImageView()
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -28,18 +34,23 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
     }
     
     private func addImageView() {
-        addSubview(imageView)
+        addSubview(containerView)
+        containerView.addSubview(imageView)
         
         NSLayoutConstraint.activate([
         
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 50),
+            containerView.widthAnchor.constraint(equalToConstant: 50),
+            
             imageView.heightAnchor.constraint(equalToConstant: returnContentSize().0),
             imageView.widthAnchor.constraint(equalToConstant: returnContentSize().1),
-            
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-        
+            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+
         ])
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 class DailyForecastDetailViewComponent: GenericBaseView<DailyForecastDetailViewComponentData> {
     
-    private var headerView: DetailHeaderViewComponent!
+    var headerView: DetailHeaderViewComponent!
     private var headerViewHeightConstraint = NSLayoutConstraint()
     private var headerViewInitialHeight: CGFloat = 340
     

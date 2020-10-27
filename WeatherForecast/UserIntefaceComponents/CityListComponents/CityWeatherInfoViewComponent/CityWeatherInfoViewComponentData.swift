@@ -5,11 +5,24 @@
 //  Created by Erkut Bas on 26.10.2020.
 //
 
-import Foundation
+import UIKit
 
 class CityWeatherInfoViewComponentData: GenericRowDataProtocol {
 
+    private(set) var itemId: Int64
+    private(set) var titleInfo: TitleInfoViewComponentData
+    private(set) var degreeValue: TempratureViewComponentData
+    private(set) var backgroundImage: UIImage = VisualContents.clear.value
     
-    var itemId: Int = 0
+    init(itemId: Int64, titleInfo: TitleInfoViewComponentData, degreeValue: TempratureViewComponentData) {
+        self.itemId = itemId
+        self.titleInfo = titleInfo
+        self.degreeValue = degreeValue
+    }
+    
+    func setBackgroundImage(by value: UIImage) -> Self {
+        self.backgroundImage = value
+        return self
+    }
     
 }

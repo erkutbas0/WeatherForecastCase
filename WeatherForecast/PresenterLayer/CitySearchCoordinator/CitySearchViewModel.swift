@@ -16,13 +16,17 @@ class CitySearchViewModel: BaseViewModelDelegate {
     var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
     private var fireDetailFlow = PublishSubject<WeatherDailyForecastResponse>()
     
+    private var coreDataOperator: WeatherForecastCoreDataManagerInterface!
+    private var observerManager: MainCoordinatorObserverManager!
     private var dailyUsecase: WeatherDailyForecastUseCase!
     private var dailyUsecaseCallback = WeatherDailyForecastCallBack()
     public var factory: CitySearchViewFactoryInterface!
     
-    init(dailyUsecase: WeatherDailyForecastUseCase, factory: CitySearchViewFactoryInterface) {
+    init(dailyUsecase: WeatherDailyForecastUseCase, factory: CitySearchViewFactoryInterface, coreDataOperator: WeatherForecastCoreDataManagerInterface, observerManager: MainCoordinatorObserverManager) {
         self.dailyUsecase = dailyUsecase
         self.factory = factory
+        self.coreDataOperator = coreDataOperator
+        self.observerManager = observerManager
     }
 
     func getDailyForecastData(textFieldsData: (String, Int)) {
@@ -35,8 +39,18 @@ class CitySearchViewModel: BaseViewModelDelegate {
         case .failure(let error):
             print("error : \(error)")
         case .success(let data):
-            self?.fireDetailFlow.onNext(data)
+            self?.fireDetailFlowAndRegisterTheCity(data: data)
         }
+    }
+    
+    private func fireDetailFlowAndRegisterTheCity(data: WeatherDailyForecastResponse) {
+        fireDetailFlow.onNext(data)
+        
+        guard let city = data.city, let id = city.id, let name = city.name else { return }
+        coreDataOperator.saveToCoreData(id: id, name: name)
+        
+        observerManager.informCityListPublisher()
+
     }
     
     func subscribeDetailFlow(_ completion: @escaping DailyForecastResponseClosure) -> Disposable {

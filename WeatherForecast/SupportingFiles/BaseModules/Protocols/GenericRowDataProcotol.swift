@@ -8,6 +8,6 @@ import Foundation
 
 protocol GenericRowDataProtocol: GenericDataProtocol {
     
-    var itemId: Int { get }
+    var itemId: Int64 { get }
     
 }

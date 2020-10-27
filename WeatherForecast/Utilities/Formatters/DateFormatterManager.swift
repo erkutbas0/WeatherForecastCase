@@ -13,8 +13,19 @@ class DateFormatterManager {
         let date = Date(timeIntervalSince1970: time)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.timeStyle = DateFormatter.Style.none //Set time style
-        dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: timeZone)
+        let localDate = dateFormatter.string(from: date)
+        return localDate
+    }
+    
+    func getTimeFormat(time: TimeInterval, timeZone: Int) -> String? {
+        let date = Date(timeIntervalSince1970: time)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        dateFormatter.dateStyle = DateFormatter.Style.none 
         dateFormatter.timeZone = TimeZone(secondsFromGMT: timeZone)
         let localDate = dateFormatter.string(from: date)
         return localDate

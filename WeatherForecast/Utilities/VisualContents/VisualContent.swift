@@ -12,6 +12,12 @@ public enum VisualContents: GenericValueProtocol {
     
     case searchIcon
     case closeIcon
+    case clear
+    case cloud
+    case drizzle
+    case rain
+    case snow
+    case thunderstorm
     
     typealias Value = UIImage
     
@@ -21,6 +27,18 @@ public enum VisualContents: GenericValueProtocol {
             return UIImage(imageLiteralResourceName: "searchIcon")
         case .closeIcon:
             return UIImage(imageLiteralResourceName: "closeIcon")
+        case .clear:
+            return UIImage(imageLiteralResourceName: "clear")
+        case .cloud:
+            return UIImage(imageLiteralResourceName: "cloud")
+        case .drizzle:
+            return UIImage(imageLiteralResourceName: "drizzle")
+        case .rain:
+            return UIImage(imageLiteralResourceName: "rain")
+        case .snow:
+            return UIImage(imageLiteralResourceName: "snow")
+        case .thunderstorm:
+            return UIImage(imageLiteralResourceName: "thunderstorm")
         }
     }
     

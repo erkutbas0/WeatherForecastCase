@@ -9,7 +9,8 @@ import Foundation
 
 class WeatherDailyForecastRequest: CodableDataProtocol {
     
-    private(set) var queryCity: String
+    private(set) var queryCity: String?
+    private(set) var cityId: Int64?
     private(set) var units: String = "metric"
     private(set) var dailyCount: Int = 16
     private(set) var appId: String = UtilityManager.appId
@@ -19,11 +20,17 @@ class WeatherDailyForecastRequest: CodableDataProtocol {
         self.dailyCount = dailyCount
     }
     
+    init(cityId: Int64?, dailyCount: Int) {
+        self.cityId = cityId
+        self.dailyCount = dailyCount
+    }
+    
     enum CodingKeys: String, CodingKey {
         case queryCity = "q"
         case units
         case appId = "appid"
         case dailyCount = "cnt"
+        case cityId = "id"
     }
     
 }

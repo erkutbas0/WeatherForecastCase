@@ -36,10 +36,16 @@ class CitySearchCoordinator: BaseCoordinator<CitySearchViewModel> {
     
     private func fireDetailCoordinator(data: WeatherDailyForecastResponse) {
         guard let factory = AssemblerResolver.resolve(DetailViewFactoryInterface.self) else { return }
-        let detail = DailyDetailCoordinator(viewModel: DailyDetailViewModel(factory: factory, data: data))
-        start(coordinator: detail)
+        let coordinator = DailyDetailCoordinator(viewModel: DailyDetailViewModel(factory: factory, data: data))
+        coordinator.subscribeTerminaterPublisher(completion: onDismissedListener).disposed(by: disposeBag)
+        start(coordinator: coordinator)
         
-        self.viewContoller.present(detail.viewContoller, animated: true, completion: nil)
+        self.viewContoller.present(coordinator.viewContoller, animated: true, completion: nil)
+    }
+    
+    private lazy var onDismissedListener: OnDismissed = { [weak self] in
+        self?.viewContoller.dismiss(animated: true, completion: nil)
+        self?.terminateCoordinator()
     }
     
     deinit {

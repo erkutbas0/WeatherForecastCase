@@ -12,7 +12,7 @@ public protocol BaseViewModelDelegate: AnyObject {
     
     var dismissInformer: PublishSubject<Void>? { get }
     var errorPublisher: PublishSubject<CustomAlertData>? { get }
-    //func dismissCoordinator()
+    var activityStatePublisher: PublishSubject<ActivityStates>? { get }
     
 }
 
@@ -27,6 +27,14 @@ extension BaseViewModelDelegate {
 
     func subscribeErrorPublisher(_ completion: @escaping ErrorPublishClosure) -> Disposable? {
         return errorPublisher?.subscribe(onNext: completion)
+    }
+    
+    func subscribeActivityStatePublisher(_ completion: @escaping ActivityStatesCompletion) -> Disposable? {
+        return activityStatePublisher?.subscribe(onNext: completion)
+    }
+    
+    func updateActivityState(by value: ActivityStates) {
+        activityStatePublisher?.onNext(value)
     }
     
 }

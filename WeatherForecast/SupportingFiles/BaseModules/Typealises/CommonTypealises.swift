@@ -41,3 +41,5 @@ public typealias AnimationStateCompletion = ((AnimationStates) -> Void)
 
 // MARK: - Data Loading States -
 public typealias DataLoadingStateCompletion = ((DataLoadingState) -> Void)
+
+public typealias ActivityStatesCompletion = ((ActivityStates) -> Void)

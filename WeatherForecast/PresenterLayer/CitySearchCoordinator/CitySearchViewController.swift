@@ -72,7 +72,7 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
         
         NSLayoutConstraint.activate([
         
-            filterViewComponent.topAnchor.constraint(equalTo: headerViewComponent.bottomAnchor, constant: 20),
+            filterViewComponent.topAnchor.constraint(equalTo: headerViewComponent.bottomAnchor, constant: 40),
             filterViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             filterViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
         
@@ -111,6 +111,15 @@ class CitySearchViewController: BaseViewController<CitySearchViewModel> {
     private func addViewModelListeners() {
         viewModel.subscribeErrorPublisher { [weak self](alertData) in
             self?.fireCustomAlert(data: alertData, completion: nil)
+        }?.disposed(by: disposeBag)
+        
+        viewModel.subscribeActivityStatePublisher { [weak self](state) in
+            switch state {
+            case .active:
+                self?.startIndicatingActivity()
+            case .passive:
+                self?.stopIndicatingActivity()
+            }
         }?.disposed(by: disposeBag)
     }
     

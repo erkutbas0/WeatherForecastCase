@@ -13,6 +13,7 @@ class HeaderViewComponentData {
     private(set) var theme: HeaderViewComponentTheme = .dark
     private(set) var leftIcon: ImageContainerData? = nil
     private(set) var rightIcon: ImageContainerData? = nil
+    private(set) var shadowAlpha: CGFloat = 1.0
 
     init(title: BasicAttributedLabelData) {
         self.title = title
@@ -30,6 +31,11 @@ class HeaderViewComponentData {
     
     func setRightIcon(by value: ImageContainerData) -> Self {
         self.rightIcon = value
+        return self
+    }
+    
+    func setShadowAlpha(by value: CGFloat) -> Self {
+        self.shadowAlpha = value
         return self
     }
     

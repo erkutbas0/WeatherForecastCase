@@ -302,6 +302,7 @@
 		A79C38222547B63C006D732A /* CustomImageViewComponentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */; };
 		A79C38282547C5FA006D732A /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C38272547C5FA006D732A /* DateFormatterManager.swift */; };
 		A7AE08FA254896FA0056F40B /* CustomAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE08F9254896FA0056F40B /* CustomAlertData.swift */; };
+		A7AE090E2548CA830056F40B /* ActivityStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE090D2548CA830056F40B /* ActivityStates.swift */; };
 		A7C9BC002544BBA500683BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */; };
 		A7C9BC042544BBA500683BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC032544BBA500683BB3 /* ViewController.swift */; };
 		A7C9BC0A2544BBA500683BB3 /* WeatherForeCast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BC082544BBA500683BB3 /* WeatherForeCast.xcdatamodeld */; };
@@ -555,6 +556,7 @@
 		A79C38212547B63C006D732A /* CustomImageViewComponentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentContainer.swift; sourceTree = "<group>"; };
 		A79C38272547C5FA006D732A /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		A7AE08F9254896FA0056F40B /* CustomAlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertData.swift; sourceTree = "<group>"; };
+		A7AE090D2548CA830056F40B /* ActivityStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStates.swift; sourceTree = "<group>"; };
 		A7C9BBFC2544BBA500683BB3 /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BBFF2544BBA500683BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C9BC032544BBA500683BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 				A70FA55C254567180017FE92 /* DataLoadingState.swift */,
 				A70FA55D254567180017FE92 /* AnimationStates.swift */,
 				A7FD4E6125465CC900A07FD3 /* WeatherRowType.swift */,
+				A7AE090D2548CA830056F40B /* ActivityStates.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1851,6 +1854,7 @@
 				A70FA597254567180017FE92 /* Assembler+Extension.swift in Sources */,
 				A7FD4E6225465CC900A07FD3 /* WeatherRowType.swift in Sources */,
 				A70FA5C1254567180017FE92 /* BaseRequest.swift in Sources */,
+				A7AE090E2548CA830056F40B /* ActivityStates.swift in Sources */,
 				A70FA5DB254567180017FE92 /* CodableDataProtocol.swift in Sources */,
 				A70FA6A625456CCF0017FE92 /* FontManager.swift in Sources */,
 				A79C37BD25476DF9006D732A /* DetailViewFactory.swift in Sources */,

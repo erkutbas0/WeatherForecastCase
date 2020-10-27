@@ -15,7 +15,7 @@ class BaseViewController<T: BaseViewModelDelegate>: UIViewController, Interactiv
     var initialInteractivePopGestureRecognizerDelegate: UIGestureRecognizerDelegate?
 
     var viewModel: T!
-    
+
     convenience init(viewModel: T) {
         self.init()
         self.viewModel = viewModel
@@ -55,6 +55,33 @@ class BaseViewController<T: BaseViewModelDelegate>: UIViewController, Interactiv
     
     private func setViewControllerName() {
         title = viewTitle
+    }
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let temp = UIActivityIndicatorView(style: .gray)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    public func startIndicatingActivity() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.view.addSubview(self.activityIndicator)
+            NSLayoutConstraint.activate([
+                self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            ])
+            self.activityIndicator.startAnimating()
+        }
+        
+    }
+    
+    public func stopIndicatingActivity() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.activityIndicator.removeFromSuperview()
+            self.activityIndicator.stopAnimating()
+        }
     }
     
 }

@@ -13,7 +13,6 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.backgroundColor = .white
-        temp.layer.shadowColor = UIColor.black.cgColor
         temp.layer.shadowOffset = CGSize(width: 0, height: 5)
         temp.layer.shadowRadius = 8
         temp.layer.shadowOpacity = 0.8
@@ -74,6 +73,8 @@ class HeaderViewComponent: GenericBaseView<HeaderViewComponentData> {
         case .light:
             containerView.backgroundColor = ColorSpectrum.defaultWhite
         }
+        
+        containerView.layer.shadowColor = UIColor.black.withAlphaComponent(data.shadowAlpha).cgColor
     }
     
     private func setLeftIconData() {

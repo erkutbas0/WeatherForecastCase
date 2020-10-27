@@ -13,12 +13,14 @@ typealias DailyForecastResponseClosure = (WeatherDailyForecastResponse) -> Void
 typealias ErrorPublishClosure = (CustomAlertData) -> Void
 
 class CitySearchViewModel: BaseViewModelDelegate {
-
+    
+    // Mark: - Publishers -
+    var activityStatePublisher: PublishSubject<ActivityStates>? = PublishSubject<ActivityStates>()
     var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
     var errorPublisher: PublishSubject<CustomAlertData>? = PublishSubject<CustomAlertData>()
-    
     private var fireDetailFlow = PublishSubject<WeatherDailyForecastResponse>()
 
+    // Mark: - Viewmodel Properties -
     private var coreDataOperator: WeatherForecastCoreDataManagerInterface!
     private var observerManager: MainCoordinatorObserverManager!
     private var dailyUsecase: WeatherDailyForecastUseCase!
@@ -34,11 +36,13 @@ class CitySearchViewModel: BaseViewModelDelegate {
     }
 
     func getDailyForecastData(textFieldsData: (String, Int)) {
+        updateActivityState(by: .active)
         dailyUsecaseCallback.commonResult(completion: callBackListener)
         dailyUsecase.execute(useCaseCallBack: dailyUsecaseCallback, params: factory.returnWeatherDailyForecastRequest(textFieldsData: textFieldsData))
     }
     
     private lazy var callBackListener: DailyForecastResultClosure = { [weak self] result in
+        self?.updateActivityState(by: .passive)
         switch result {
         case .failure(let error):
             self?.errorPublisher?.onNext(CustomAlertData(message: error.serverResponse?.message))

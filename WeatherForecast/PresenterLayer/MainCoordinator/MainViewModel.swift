@@ -16,8 +16,9 @@ class MainViewModel: BaseViewModelDelegate {
     // Mark: - Observers -
     private let disposeBag = DisposeBag()
 
-    var dismissInformer: PublishSubject<Void>?
-    var errorPublisher: PublishSubject<CustomAlertData>?
+    var activityStatePublisher: PublishSubject<ActivityStates>? = PublishSubject<ActivityStates>()
+    var dismissInformer: PublishSubject<Void>? = PublishSubject<Void>()
+    var errorPublisher: PublishSubject<CustomAlertData>? = PublishSubject<CustomAlertData>()
     
     private var dataState = PublishSubject<DataLoadingState>()
     private var detailForecastPublisher = PublishSubject<WeatherDailyForecastResponse>()
@@ -70,11 +71,13 @@ class MainViewModel: BaseViewModelDelegate {
     }
     
     func getDailyForecastData(cityId: Int64) {
+        updateActivityState(by: .active)
         dailyForecastCallBack.commonResult(completion: dailyCallBackListener)
-        dailyForecastUsecase.execute(useCaseCallBack: dailyForecastCallBack, params: WeatherDailyForecastRequest(cityId: cityId, dailyCount: 10))
+        dailyForecastUsecase.execute(useCaseCallBack: dailyForecastCallBack, params: WeatherDailyForecastRequest(cityId: cityId, dailyCount: ConstantKeyStrings.IntegerConstants.MAX_DAILY_COUNT))
     }
     
     private lazy var dailyCallBackListener: (Result<WeatherDailyForecastResponse, ErrorResponse>) -> Void = { [weak self] result in
+        self?.updateActivityState(by: .passive)
         switch result {
         case .failure(let error):
             self?.errorPublisher?.onNext(CustomAlertData(message: error.serverResponse?.message))

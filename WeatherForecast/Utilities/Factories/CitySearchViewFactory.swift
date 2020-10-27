@@ -22,7 +22,7 @@ class CitySearchViewFactory: CitySearchViewFactoryInterface {
         
         return HeaderViewComponentData(title: title)
             .setTheme(by: .light)
-            .setLeftIcon(by: imageContainerData)
+            .setLeftIcon(by: imageContainerData).setShadowAlpha(by: 0.5)
     }
     
     func returnActionButtonViewComponentData() -> ActionButtonViewComponentData {

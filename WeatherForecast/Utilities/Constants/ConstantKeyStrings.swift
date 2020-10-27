@@ -13,4 +13,8 @@ struct ConstantKeyStrings {
         static let hasLaunchBefore: String = "has_launch_before"
         static let welcomeViewLaunchBefore: String = "welcome_view_launch_before"
     }
+    
+    struct IntegerConstants {
+        static let MAX_DAILY_COUNT: Int = 16
+    }
 }

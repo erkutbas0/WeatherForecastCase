@@ -85,6 +85,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         cityListViewComponent.subscribeRemovedCity { [weak self](cityId) in
             self?.viewModel.removeCity(with: cityId)
         }
+        
     }
     
     private func addViewModelListeners() {
@@ -101,7 +102,17 @@ class MainViewController: BaseViewController<MainViewModel> {
         
         viewModel.subscribeErrorPublisher { [weak self](alertData) in
             self?.fireCustomAlert(data: alertData, completion: nil)
-        }
+        }?.disposed(by: disposeBag)
+        
+        viewModel.subscribeActivityStatePublisher { [weak self](state) in
+            switch state {
+            case .active:
+                self?.startIndicatingActivity()
+            case .passive:
+                self?.stopIndicatingActivity()
+            }
+        }?.disposed(by: disposeBag)
+        
     }
     
 }
